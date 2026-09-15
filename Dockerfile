@@ -10,7 +10,7 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
-# Asegurar permisos y crear la base de datos SQLite si no existe
+# Asegurar permisos y crear la base de datos SQLite
 RUN mkdir -p /var/www/html/database && \
     touch /var/www/html/database/database.sqlite && \
     chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database && \
@@ -32,4 +32,6 @@ RUN echo "server { \
 }" > /etc/nginx/sites-available/default
 
 EXPOSE 80
-CMD service nginx start && php-fpm
+
+# Script de inicio para correr migraciones y levantar servicios
+CMD service nginx start && php artisan config:cache && php artisan migrate --force && php-fpm
