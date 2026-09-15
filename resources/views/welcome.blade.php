@@ -3,59 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Punto de Encuentro | El Mundo Boca</title>
+    <title>El Punto de Encuentro | Home 2026</title>
     <style>
         :root {
-            --bg-dark: #0b0f19;
-            --card-bg: #131b2e;
-            --blue-boca: #0038a8;
-            --gold-boca: #ffcc00;
+            --bg-base: #090a0f;
+            --bg-surface: #12151c;
+            --bg-surface-hover: #1a1f2c;
+            --accent: #f59e0b; /* Ámbar elegante, sutil referencia al oro sin recargar */
+            --accent-glow: rgba(245, 158, 11, 0.15);
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
-            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-            --border-glow: 1px solid rgba(255, 204, 0, 0.2);
+            --border: rgba(255, 255, 255, 0.08);
+            --shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-base);
             color: var(--text-main);
+            padding-bottom: 90px; /* Espacio para que el navbar inferior no tape contenido */
             overflow-x: hidden;
         }
 
-        /* Hero Section con profundidad y gradientes */
+        /* Hero Profesional con Profundidad */
         .hero {
             position: relative;
-            padding: 80px 20px;
+            padding: 90px 20px 60px 20px;
             text-align: center;
-            background: radial-gradient(circle at 50% 20%, #1e293b 0%, var(--bg-dark) 70%);
-            border-bottom: var(--border-glow);
+            background: radial-gradient(circle at 50% 10%, #1c2333 0%, var(--bg-base) 70%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--accent-glow);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 15px;
-            background: linear-gradient(135deg, #ffffff 30%, var(--gold-boca) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 30px auto;
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+            line-height: 1.6;
         }
 
-        /* Botones de acción con relieve */
-        .cta-buttons {
+        /* Botones de Acción */
+        .cta-group {
             display: flex;
             justify-content: center;
             gap: 15px;
@@ -63,81 +83,171 @@
         }
 
         .btn {
-            padding: 12px 28px;
-            border-radius: 8px;
+            padding: 12px 26px;
+            border-radius: 10px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            font-size: 0.95rem;
         }
 
-        .btn-primary {
-            background-color: var(--gold-boca);
+        .btn-main {
+            background-color: var(--accent);
             color: #000;
         }
 
-        .btn-primary:hover {
+        .btn-main:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+            background-color: #fbbf24;
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
         }
 
-        .btn-secondary {
-            background-color: var(--card-bg);
+        .btn-sec {
+            background-color: var(--bg-surface);
             color: var(--text-main);
-            border: var(--border-glow);
+            border: 1px solid var(--border);
         }
 
-        .btn-secondary:hover {
-            background-color: #1a2642;
+        .btn-sec:hover {
+            background-color: var(--bg-surface-hover);
             transform: translateY(-2px);
+            border-color: rgba(255,255,255,0.2);
         }
 
-        /* Contenedor principal de secciones */
+        /* Contenedor y Secciones */
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 50px 20px;
         }
 
-        .section-title {
-            font-size: 2rem;
+        .section-header {
             margin-bottom: 30px;
-            border-left: 5px solid var(--gold-boca);
-            padding-left: 15px;
         }
 
-        /* Grid de tarjetas sin diseño plano (efecto 3D / elevación) */
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+
+        /* Grid de Tarjetas sin diseño plano (con profundidad y relieve) */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
 
         .card {
-            background: var(--card-bg);
+            background: var(--bg-surface);
             border-radius: 16px;
             padding: 30px;
             box-shadow: var(--shadow);
-            border: var(--border-glow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
             position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(0, 56, 168, 0.4);
-            border-color: rgba(255, 204, 0, 0.5);
+            border-color: rgba(245, 158, 11, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.7);
+        }
+
+        .card:hover::before {
+            opacity: 1;
         }
 
         .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--gold-boca);
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: #fff;
         }
 
         .card p {
             color: var(--text-muted);
             line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        /* Navbar Inferior Fijo (Estilo App Moderna) */
+        .bottom-nav {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 500px;
+            background: rgba(18, 21, 28, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .nav-item {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--accent);
         }
     </style>
 </head>
@@ -145,35 +255,56 @@
 
     <!-- Hero Section -->
     <header class="hero">
-        <h1>Punto de Encuentro</h1>
-        <p>El análisis definitivo de Boca Juniors, la previa de la Sudamericana y toda la comunidad de YouTube y TikTok en un solo lugar.</p>
-        <div class="cta-buttons">
-            <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="btn btn-primary">Ver Canal de YouTube</a>
-            <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="btn btn-secondary">Seguir en TikTok</a>
+        <div class="hero-badge">Comunidad & Análisis</div>
+        <h1>El Punto de <span>Encuentro</span></h1>
+        <p>El espacio definitivo para vivir el mundo de Boca Juniors, debates post-partido, estadísticas y la mejor interacción en comunidad.</p>
+        <div class="cta-group">
+            <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="btn btn-main">Ver YouTube</a>
+            <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="btn btn-sec">Seguir en TikTok</a>
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Contenido Principal -->
     <main class="container">
-        <h2 class="section-title">Secciones Interactívas del Canal</h2>
+        <div class="section-header">
+            <h2>Secciones Destacadas</h2>
+            <p>Navegá por las herramientas interactivas del canal</p>
+        </div>
+
         <div class="grid">
             <!-- Tarjeta 1 -->
             <div class="card">
                 <h3>El Podio del Partido</h3>
-                <p>Ingresá para votar y elegir a los tres mejores jugadores de Boca tras cada encuentro. Tu opinión construye el debate del próximo stream.</p>
+                <p>Elegí a los tres jugadores destacados de cada encuentro. Tu voto alimenta las estadísticas y el debate del próximo stream.</p>
+                <a href="#" class="card-link">Participar del Podio &rarr;</a>
             </div>
             <!-- Tarjeta 2 -->
             <div class="card">
                 <h3>Tablas y Estadísticas</h3>
-                <p>Seguí de cerca la tabla anual, la posición de Boca en el torneo y las estadísticas detalladas de rendimiento fecha a fecha.</p>
+                <p>Seguí de cerca la tabla anual, la posición en el torneo y el rendimiento detallado fecha a fecha con análisis exclusivo.</p>
+                <a href="#" class="card-link">Ver Tablas &rarr;</a>
             </div>
             <!-- Tarjeta 3 -->
             <div class="card">
-                <h3>Comunidad y Debate</h3>
-                <p>Sumate al grupo de WhatsApp y a las transmisiones en vivo para participar activamente de las reacciones y polémicas del mundo xeneize.</p>
+                <h3>Comunidad Activa</h3>
+                <p>Sumate al grupo de comunicación directa y enterate antes que nadie de las previas, reacciones y transmisiones en vivo.</p>
+                <a href="#" class="card-link">Unirme al Grupo &rarr;</a>
             </div>
         </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 EL PUNTO DE ENCUENTRO. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Navbar Inferior Fijo -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">🏠 <span>Inicio</span></a>
+        <a href="#" class="nav-item">📊 <span>Podio</span></a>
+        <a href="#" class="nav-item">📈 <span>Tablas</span></a>
+        <a href="#" class="nav-item">💬 <span>Comunidad</span></a>
+    </nav>
 
 </body>
 </html>
