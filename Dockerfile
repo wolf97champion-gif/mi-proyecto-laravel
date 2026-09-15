@@ -1,7 +1,7 @@
 FROM php:8.2-fpm
 
 RUN apt-get update && apt-get install -y \
-    git curl libpng-dev libonig-dev libxml2-dev zip unzip nginx
+    git curl libpng-dev libonig-dev libxml2-dev zip unzip nginx sqlite3 libsqlite3-dev
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -9,9 +9,14 @@ WORKDIR /var/www/html
 COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Configurar Nginx para apuntar a la carpeta public de Laravel
+# Asegurar permisos y crear la base de datos SQLite si no existe
+RUN mkdir -p /var/www/html/database && \
+    touch /var/www/html/database/database.sqlite && \
+    chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database && \
+    chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/database
+
+# Configurar Nginx para Laravel
 RUN echo "server { \
     listen 80; \
     root /var/www/html/public; \
