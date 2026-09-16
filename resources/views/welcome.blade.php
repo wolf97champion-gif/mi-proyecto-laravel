@@ -87,11 +87,11 @@
             color: #fff;
         }
 
-        /* Contenedor Principal en el Centro */
+        /* Contenedor Principal de la Página */
         .main-container {
-            max-width: 1050px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 35px 20px;
             display: flex;
             flex-direction: column;
             gap: 30px;
@@ -102,7 +102,7 @@
             background: linear-gradient(135deg, var(--bg-surface) 0%, #121926 100%);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 45px 30px;
+            padding: 40px 30px;
             text-align: center;
             box-shadow: var(--shadow);
         }
@@ -122,9 +122,9 @@
         }
 
         .hero-section h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #fff;
         }
 
@@ -134,31 +134,33 @@
 
         .hero-section p {
             color: var(--text-muted);
-            font-size: 1.05rem;
+            font-size: 1rem;
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.5;
         }
 
-        /* Secciones Grid Central */
-        .content-grid {
+        /* Grilla General: Contenido Principal a la izquierda, Navbar Parado (Sidebar) a la derecha */
+        .content-layout {
             display: grid;
-            grid-template-columns: 1.6fr 1fr;
+            grid-template-columns: 1.4fr 0.9fr;
             gap: 25px;
+            align-items: start;
         }
 
-        @media (max-width: 900px) {
-            .content-grid {
+        @media (max-width: 950px) {
+            .content-layout {
                 grid-template-columns: 1fr;
             }
         }
 
-        .column {
+        .column-main {
             display: flex;
             flex-direction: column;
             gap: 25px;
         }
 
+        /* Panel Común */
         .panel {
             background: var(--bg-surface);
             border: 1px solid var(--border);
@@ -166,10 +168,6 @@
             padding: 25px;
             box-shadow: var(--shadow);
             transition: border-color 0.2s;
-        }
-
-        .panel:hover {
-            border-color: rgba(245, 158, 11, 0.35);
         }
 
         .panel-title {
@@ -189,7 +187,7 @@
             margin-bottom: 20px;
         }
 
-        /* Tarjeta de Video Corregida y Robusta */
+        /* Tarjeta de Video Optimizada */
         .video-card-preview {
             position: relative;
             width: 100%;
@@ -243,43 +241,6 @@
             background: #fbbf24;
         }
 
-        /* Tarjetas de Navegación */
-        .nav-cards-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .nav-feature-card {
-            background: var(--bg-base);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.2s ease;
-        }
-
-        .nav-feature-card:hover {
-            border-color: var(--accent);
-            background: var(--bg-surface-hover);
-            transform: translateY(-2px);
-        }
-
-        .nav-feature-card h4 {
-            color: #fff;
-            font-size: 1.05rem;
-            margin-bottom: 6px;
-        }
-
-        .nav-feature-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-        }
-
         .card-link-text {
             color: var(--accent);
             font-weight: 600;
@@ -314,6 +275,99 @@
             transform: translateY(-2px);
         }
 
+        /* --- NAVBAR PARADO (SIDEBAR LATERAL) --- */
+        .sidebar-nav {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: sticky;
+            top: 95px;
+        }
+
+        .sidebar-header {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .sidebar-item {
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-item:hover {
+            border-color: var(--accent);
+            background: var(--bg-surface-hover);
+            transform: translateX(3px);
+        }
+
+        .sidebar-item-content h4 {
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .sidebar-item-content span {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        .sidebar-arrow {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Separador de Espacio en el Navbar Parado */
+        .sidebar-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 8px 0;
+        }
+
+        /* Estilo especial para la Sección Historia (Próximamente) */
+        .sidebar-item.coming-soon {
+            opacity: 0.75;
+            border-style: dashed;
+            background: rgba(255, 255, 255, 0.02);
+            cursor: default;
+        }
+
+        .sidebar-item.coming-soon:hover {
+            transform: none;
+            border-color: var(--border);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .badge-soon {
+            background: rgba(245, 158, 11, 0.12);
+            color: var(--accent);
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -336,28 +390,27 @@
         </div>
     </nav>
 
-    <!-- Contenedor Principal al Centro -->
+    <!-- Contenedor Principal -->
     <main class="main-container">
 
-        <!-- Hero: Presentación oficial -->
+        <!-- Hero / Presentación -->
         <header class="hero-section">
             <div class="creator-tag">Sitio Oficial • Creado por Michael Novoa</div>
             <h1>El Punto de <span>Encuentro</span></h1>
             <p>El espacio definitivo de análisis, debates post-partido y toda la pasión del mundo de Boca Juniors. Conducido y producido por Michael Novoa para vivir la comunidad de manera única.</p>
         </header>
 
-        <!-- Grilla de Contenido Central -->
-        <div class="content-grid">
+        <!-- Grilla Principal (Izquierda: Video / Comunidad | Derecha: Navbar Parado) -->
+        <div class="content-layout">
             
-            <!-- Columna Izquierda -->
-            <div class="column">
+            <!-- Columna Izquierda: Contenido Central -->
+            <div class="column-main">
                 
-                <!-- Panel de Video con Miniatura Oficial de YouTube -->
+                <!-- Panel del Último Video -->
                 <div class="panel">
                     <div class="panel-title">📺 Último Análisis en Directo</div>
                     <p>Reviví el programa más reciente directamente haciendo clic en el reproductor.</p>
                     
-                    <!-- Enlace con miniatura real de YouTube incorporada -->
                     <a href="https://www.youtube.com/watch?v=It-xG6qLVmM" target="_blank" class="video-card-preview">
                         <img src="https://img.youtube.com/vi/It-xG6qLVmM/maxresdefault.jpg" alt="Último video del canal">
                         <div class="play-overlay-btn">▶</div>
@@ -368,46 +421,68 @@
                     </div>
                 </div>
 
-                <!-- Tarjetas de Navegación -->
+                <!-- Panel Comunidad y Redes -->
                 <div class="panel">
-                    <div class="panel-title">⚡ Secciones del Canal</div>
-                    <p>Hacé clic en las tarjetas para ingresar a las páginas completas con todo el contenido interactivo.</p>
-                    
-                    <div class="nav-cards-grid">
-                        <a href="podio.php" class="nav-feature-card">
-                            <div>
-                                <h4>🏆 Podio del Partido</h4>
-                                <p>Votá y puntuá a los mejores jugadores de la fecha.</p>
-                            </div>
-                            <span class="card-link-text">Entrar al Podio &rarr;</span>
-                        </a>
-
-                        <a href="estadisticas.php" class="nav-feature-card">
-                            <div>
-                                <h4>📊 Tablas & Stats</h4>
-                                <p>Consultá las posiciones, rendimiento y estadísticas detalladas.</p>
-                            </div>
-                            <span class="card-link-text">Ver Estadísticas &rarr;</span>
-                        </a>
+                    <div class="panel-title">💬 Comunidad & Redes</div>
+                    <p>Sumate al grupo oficial de comunicación y seguinos en TikTok para no perderte ningún clip exclusivo.</p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="#" class="btn-main" style="flex: 1; min-width: 180px;">Unirme al Grupo &rarr;</a>
+                        <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="social-btn tiktok" style="padding: 12px 20px; font-size: 0.9rem; display: inline-flex; align-items: center; justify-content: center;">Ir a TikTok</a>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Columna Derecha -->
-            <div class="column">
-                <div class="panel">
-                    <div class="panel-title">💬 Comunidad Activa</div>
-                    <p>Sumate al grupo oficial de comunicación para enterarte antes que nadie de las previas, horarios de stream y debates abiertos.</p>
-                    <a href="#" class="btn-main">Unirme al Grupo &rarr;</a>
+            <!-- Columna Derecha: Navbar Parado (Sidebar con Secciones) -->
+            <aside class="sidebar-nav">
+                <div class="sidebar-header">
+                    <span>⚡</span> Secciones del Canal
                 </div>
 
-                <div class="panel">
-                    <div class="panel-title">📱 Redes Oficiales</div>
-                    <p>Seguinos en TikTok (@michaelnovoa16) para clips cortos, polémicas picantes y recortes imperdibles de cada transmisión.</p>
-                    <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="card-link-text">Ir al TikTok oficial &rarr;</a>
+                <a href="podio.php" class="sidebar-item">
+                    <div class="sidebar-item-content">
+                        <h4>🏆 Podio de Jugadores</h4>
+                        <span>Votá y puntuá a los mejores</span>
+                    </div>
+                    <span class="sidebar-arrow">&rsaquo;</span>
+                </a>
+
+                <a href="estadisticas.php" class="sidebar-item">
+                    <div class="sidebar-item-content">
+                        <h4>📊 Estadísticas</h4>
+                        <span>Rendimiento y métricas</span>
+                    </div>
+                    <span class="sidebar-arrow">&rsaquo;</span>
+                </a>
+
+                <a href="posiciones.php" class="sidebar-item">
+                    <div class="sidebar-item-content">
+                        <h4>📌 Posiciones Actuales</h4>
+                        <span>Tabla de la liga y copa</span>
+                    </div>
+                    <span class="sidebar-arrow">&rsaquo;</span>
+                </a>
+
+                <a href="plantel.php" class="sidebar-item">
+                    <div class="sidebar-item-content">
+                        <h4>👥 Plantel Actual</h4>
+                        <span>Jugadores y cuerpo técnico</span>
+                    </div>
+                    <span class="sidebar-arrow">&rsaquo;</span>
+                </a>
+
+                <!-- Espacio / Separador en el medio -->
+                <div class="sidebar-divider"></div>
+
+                <!-- Sección Historia (Próximamente) -->
+                <div class="sidebar-item coming-soon">
+                    <div class="sidebar-item-content">
+                        <h4>📜 Sección de Historia</h4>
+                        <span>Orígenes y archivos del club</span>
+                    </div>
+                    <span class="badge-soon">Pronto</span>
                 </div>
-            </div>
+            </aside>
 
         </div>
 
