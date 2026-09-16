@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Punto de Encuentro | Canal Oficial de Michael Novoa</title>
+    <title>El Punto de Encuentro | Michael Novoa</title>
     <style>
         :root {
             --bg-base: #07090e;
@@ -14,7 +14,7 @@
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
             --border: rgba(255, 255, 255, 0.08);
-            --shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+            --shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.7);
         }
 
         * {
@@ -30,14 +30,14 @@
             overflow-x: hidden;
         }
 
-        /* Navbar Superior Fijo */
+        /* Navbar Superior Fijo - Limpio y perfectamente distribuido */
         .top-nav {
             position: sticky;
             top: 0;
-            background: rgba(7, 9, 14, 0.9);
-            backdrop-filter: blur(12px);
+            background: rgba(7, 9, 14, 0.92);
+            backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
-            padding: 15px 40px;
+            padding: 15px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -52,7 +52,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            cursor: pointer;
         }
 
         .nav-brand span {
@@ -88,22 +87,22 @@
             color: #fff;
         }
 
-        /* Contenedor Centralizado */
+        /* Contenedor Principal: Concentrado 100% en el centro con excelente uso de márgenes */
         .main-container {
-            max-width: 1100px;
+            max-width: 1050px;
             margin: 0 auto;
             padding: 40px 20px;
             display: flex;
             flex-direction: column;
-            gap: 35px;
+            gap: 30px;
         }
 
-        /* Hero / Presentación de Michael Novoa */
+        /* Hero / Presentación Central */
         .hero-section {
-            background: linear-gradient(135deg, var(--bg-surface) 0%, #131a28 100%);
+            background: linear-gradient(135deg, var(--bg-surface) 0%, #121926 100%);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 50px 30px;
+            padding: 45px 30px;
             text-align: center;
             box-shadow: var(--shadow);
         }
@@ -114,7 +113,7 @@
             background: var(--accent-glow);
             border: 1px solid rgba(245, 158, 11, 0.3);
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--accent);
             font-weight: 700;
             margin-bottom: 15px;
@@ -123,11 +122,10 @@
         }
 
         .hero-section h1 {
-            font-size: 2.6rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #fff;
-            letter-spacing: -0.5px;
         }
 
         .hero-section h1 span {
@@ -137,16 +135,16 @@
         .hero-section p {
             color: var(--text-muted);
             font-size: 1.05rem;
-            max-width: 750px;
+            max-width: 700px;
             margin: 0 auto;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        /* Seccion de Columnas unificadas */
+        /* Secciones Grid Central */
         .content-grid {
             display: grid;
-            grid-template-columns: 1.8fr 1.2fr;
-            gap: 30px;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 25px;
         }
 
         @media (max-width: 900px) {
@@ -158,7 +156,7 @@
         .column {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 25px;
         }
 
         .panel {
@@ -175,10 +173,10 @@
         }
 
         .panel-title {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -186,40 +184,103 @@
 
         .panel p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.5;
             margin-bottom: 20px;
         }
 
-        /* Reproductor de YouTube Real */
-        .video-container {
+        /* Tarjeta de Reproductor / Video Segura y Funcional */
+        .video-card-preview {
             position: relative;
             width: 100%;
             aspect-ratio: 16/9;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--border);
             background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
 
-        .video-container iframe {
+        .video-card-preview img {
             width: 100%;
             height: 100%;
-            border: none;
+            object-fit: cover;
+            opacity: 0.75;
+            transition: transform 0.3s;
         }
 
-        .action-link {
-            color: var(--accent);
+        .video-card-preview:hover img {
+            transform: scale(1.03);
+            opacity: 0.9;
+        }
+
+        .play-overlay-btn {
+            position: absolute;
+            background: var(--accent);
+            color: #000;
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            transition: transform 0.2s;
+        }
+
+        .video-card-preview:hover .play-overlay-btn {
+            transform: scale(1.1);
+        }
+
+        /* Tarjetas de Navegación de Contenido (Para ir a páginas internas cargadas) */
+        .nav-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .nav-feature-card {
+            background: var(--bg-base);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
             text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+
+        .nav-feature-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-surface-hover);
+            transform: translateY(-2px);
+        }
+
+        .nav-feature-card h4 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .nav-feature-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .card-link-text {
+            color: var(--accent);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: inline-flex;
             align-items: center;
             gap: 5px;
-        }
-
-        .action-link:hover {
-            text-decoration: underline;
         }
 
         .btn-main {
@@ -231,6 +292,8 @@
             justify-content: center;
             font-weight: 700;
             width: 100%;
+            text-decoration: none;
+            display: inline-flex;
             box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
             transition: transform 0.2s, background 0.2s;
         }
@@ -238,43 +301,14 @@
         .btn-main:hover {
             background: #fbbf24;
             transform: translateY(-2px);
-            text-decoration: none;
         }
 
-        /* Herramientas Grid Interno */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .tool-card {
-            background: var(--bg-base);
-            padding: 18px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .tool-card h4 {
-            color: #fff;
-            font-size: 1rem;
-            margin-bottom: 6px;
-        }
-
-        .tool-card p {
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-        }
-
-        /* Footer Oficial */
+        /* Footer */
         .footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 35px 20px;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             border-top: 1px solid var(--border);
             margin-top: 20px;
         }
@@ -282,7 +316,7 @@
 </head>
 <body>
 
-    <!-- Navbar Superior con enlace asegurado al Home -->
+    <!-- Navbar Superior -->
     <nav class="top-nav">
         <a href="#" class="nav-brand">⚡ EL PUNTO DE <span>ENCUENTRO</span></a>
         <div class="nav-socials">
@@ -291,69 +325,77 @@
         </div>
     </nav>
 
-    <!-- Contenedor Principal Centrado -->
+    <!-- Contenedor Principal al Centro -->
     <main class="main-container">
 
-        <!-- Hero: Quién soy y de qué trata -->
+        <!-- Hero: Presentación oficial -->
         <header class="hero-section">
-            <div class="creator-tag">Sitio Oficial creado por Michael Novoa</div>
+            <div class="creator-tag">Sitio Oficial • Creado por Michael Novoa</div>
             <h1>El Punto de <span>Encuentro</span></h1>
             <p>El espacio definitivo de análisis, debates post-partido y toda la pasión del mundo de Boca Juniors. Conducido y producido por Michael Novoa para vivir la comunidad de manera única.</p>
         </header>
 
-        <!-- Grilla de Contenido Principal -->
+        <!-- Grilla de Contenido Central -->
         <div class="content-grid">
             
-            <!-- Columna Izquierda: Video Real y Herramientas -->
+            <!-- Columna Izquierda: Video Funcional y Tarjetas de Navegación -->
             <div class="column">
-                <!-- Panel de Video Real de YouTube -->
+                
+                <!-- Panel de Video con Enlace Directo y Seguro -->
                 <div class="panel">
                     <div class="panel-title">📺 Último Análisis en Directo</div>
-                    <p>Reviví el programa más reciente directamente desde el canal de YouTube.</p>
-                    <div class="video-container">
-                        <!-- Video real integrado para que funcione el play perfectamente -->
-                        <iframe src="https://www.youtube-nocookie.com/embed/It-xG6qLVmM" title="Último video del canal" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                    <p>Mirá el programa más reciente o hacé clic para reproducirlo al instante en YouTube.</p>
+                    
+                    <!-- Tarjeta previsualización interactiva (evita errores de bloqueo externo de iframe) -->
+                    <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="video-card-preview">
+                        <!-- Podes cambiar esta imagen por la miniatura exacta de tu último video de YouTube -->
+                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1000&auto=format&fit=crop" alt="Último video del canal">
+                        <div class="play-overlay-btn">▶</div>
+                    </a>
+
                     <div style="margin-top: 15px;">
-                        <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="action-link">Ver más transmisiones en YouTube &rarr;</a>
+                        <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="card-link-text">Ver todas las transmisiones en YouTube &rarr;</a>
                     </div>
                 </div>
 
-                <!-- Herramientas Interactivas del Canal -->
+                <!-- Tarjetas de Navegación a Páginas Internas Cargadas -->
                 <div class="panel">
-                    <div class="panel-title">⚡ Herramientas Interactivas</div>
-                    <p>Secciones exclusivas para participar de las dinámicas del stream y consultar datos al instante.</p>
-                    <div class="tools-grid">
-                        <div class="tool-card">
+                    <div class="panel-title">⚡ Secciones del Canal</div>
+                    <p>Hacé clic en las tarjetas para ingresar a las páginas completas con todo el contenido interactivo.</p>
+                    
+                    <div class="nav-cards-grid">
+                        <a href="podio.php" class="nav-feature-card">
                             <div>
-                                <h4>Podio del Partido</h4>
-                                <p>Votá a los mejores jugadores.</p>
+                                <h4>🏆 Podio del Partido</h4>
+                                <p>Votá y puntuá a los mejores jugadores de la fecha.</p>
                             </div>
-                            <a href="#" class="action-link" style="font-size: 0.85rem;">Participar &rarr;</a>
-                        </div>
-                        <div class="tool-card">
+                            <span class="card-link-text">Entrar al Podio &rarr;</span>
+                        </a>
+
+                        <a href="estadisticas.php" class="nav-feature-card">
                             <div>
-                                <h4>Tablas & Stats</h4>
-                                <p>Seguí las posiciones en detalle.</p>
+                                <h4>📊 Tablas & Stats</h4>
+                                <p>Consultá las posiciones, rendimiento y estadísticas detalladas.</p>
                             </div>
-                            <a href="#" class="action-link" style="font-size: 0.85rem;">Consultar &rarr;</a>
-                        </div>
+                            <span class="card-link-text">Ver Estadísticas &rarr;</span>
+                        </a>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Columna Derecha: Comunidad y Accesos Directos -->
+            <!-- Columna Derecha: Comunidad y Accesos -->
             <div class="column">
                 <div class="panel">
                     <div class="panel-title">💬 Comunidad Activa</div>
                     <p>Sumate al grupo oficial de comunicación para enterarte antes que nadie de las previas, horarios de stream y debates abiertos.</p>
-                    <a href="#" class="btn-main" style="display: inline-flex; text-decoration: none;">Unirme al Grupo &rarr;</a>
+                    <a href="#" class="btn-main">Unirme al Grupo &rarr;</a>
                 </div>
 
                 <div class="panel">
                     <div class="panel-title">📱 Redes Oficiales</div>
                     <p>Seguinos en TikTok (@michaelnovoa16) para clips cortos, polémicas picantes y recortes imperdibles de cada transmisión.</p>
-                    <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="action-link">Ir al TikTok oficial &rarr;</a>
+                    <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="card-link-text">Ir al TikTok oficial &rarr;</a>
                 </div>
             </div>
 
@@ -361,7 +403,7 @@
 
     </main>
 
-    <!-- Footer con Derechos Reservados Propios -->
+    <!-- Footer con Derechos Propios -->
     <footer class="footer">
         <p>&copy; 2026 EL PUNTO DE ENCUENTRO. Todos los derechos reservados. Creado por Michael Novoa.</p>
     </footer>
