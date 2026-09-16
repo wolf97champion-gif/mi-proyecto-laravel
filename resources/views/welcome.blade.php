@@ -30,7 +30,7 @@
             overflow-x: hidden;
         }
 
-        /* Navbar Superior Fijo - Limpio y perfectamente distribuido */
+        /* Navbar Superior Fijo */
         .top-nav {
             position: sticky;
             top: 0;
@@ -87,7 +87,7 @@
             color: #fff;
         }
 
-        /* Contenedor Principal: Concentrado 100% en el centro con excelente uso de márgenes */
+        /* Contenedor Principal en el Centro */
         .main-container {
             max-width: 1050px;
             margin: 0 auto;
@@ -189,8 +189,8 @@
             margin-bottom: 20px;
         }
 
-        /* Reproductor de YouTube Real Embebido con Reproducción Habilitada */
-        .video-container {
+        /* Solución Definitiva: Tarjeta Interactiva con Miniatura y Play */
+        .video-card-preview {
             position: relative;
             width: 100%;
             aspect-ratio: 16/9;
@@ -198,15 +198,48 @@
             overflow: hidden;
             border: 1px solid var(--border);
             background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
 
-        .video-container iframe {
+        .video-card-preview img {
             width: 100%;
             height: 100%;
-            border: none;
+            object-fit: cover;
+            opacity: 0.75;
+            transition: transform 0.3s, opacity 0.3s;
         }
 
-        /* Tarjetas de Navegación de Contenido (Para ir a páginas internas cargadas) */
+        .video-card-preview:hover img {
+            transform: scale(1.03);
+            opacity: 0.95;
+        }
+
+        .play-overlay-btn {
+            position: absolute;
+            background: var(--accent);
+            color: #000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+            transition: transform 0.2s, background 0.2s;
+            padding-left: 3px; /* Centra visualmente el icono de play */
+        }
+
+        .video-card-preview:hover .play-overlay-btn {
+            transform: scale(1.1);
+            background: #fbbf24;
+        }
+
+        /* Tarjetas de Navegación */
         .nav-cards-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -312,25 +345,27 @@
         <!-- Grilla de Contenido Central -->
         <div class="content-grid">
             
-            <!-- Columna Izquierda: Video Funcional y Tarjetas de Navegación -->
+            <!-- Columna Izquierda -->
             <div class="column">
                 
-                <!-- Panel del Reproductor Real de YouTube -->
+                <!-- Panel de Video con Tarjeta Interactiva (Cero Restricciones) -->
                 <div class="panel">
                     <div class="panel-title">📺 Último Análisis en Directo</div>
-                    <p>Reviví el programa más reciente directamente desde el reproductor oficial del canal.</p>
+                    <p>Reviví el programa más reciente directamente haciendo clic en el reproductor.</p>
                     
-                    <!-- Reproductor iframe embebido con permisos completos -->
-                    <div class="video-container">
-                        <iframe src="https://www.youtube-nocookie.com/embed/It-xG6qLVmM" title="Último video del canal" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+                    <!-- Reemplaza el enlace de YouTube por el link exacto de tu último video -->
+                    <a href="https://www.youtube.com/watch?v=It-xG6qLVmM" target="_blank" class="video-card-preview">
+                        <!-- Podés cambiar la imagen por la miniatura exacta de tu video -->
+                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1000&auto=format&fit=crop" alt="Último video del canal">
+                        <div class="play-overlay-btn">▶</div>
+                    </a>
 
                     <div style="margin-top: 15px;">
                         <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="card-link-text">Ver más transmisiones en YouTube &rarr;</a>
                     </div>
                 </div>
 
-                <!-- Tarjetas de Navegación a Páginas Internas Cargadas -->
+                <!-- Tarjetas de Navegación -->
                 <div class="panel">
                     <div class="panel-title">⚡ Secciones del Canal</div>
                     <p>Hacé clic en las tarjetas para ingresar a las páginas completas con todo el contenido interactivo.</p>
@@ -356,7 +391,7 @@
 
             </div>
 
-            <!-- Columna Derecha: Comunidad y Accesos -->
+            <!-- Columna Derecha -->
             <div class="column">
                 <div class="panel">
                     <div class="panel-title">💬 Comunidad Activa</div>
@@ -375,7 +410,7 @@
 
     </main>
 
-    <!-- Footer con Derechos Propios -->
+    <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2026 EL PUNTO DE ENCUENTRO. Todos los derechos reservados. Creado por Michael Novoa.</p>
     </footer>
