@@ -189,7 +189,7 @@
             margin-bottom: 20px;
         }
 
-        /* Solución Definitiva: Tarjeta Interactiva con Miniatura y Play */
+        /* Tarjeta de Video Corregida y Robusta */
         .video-card-preview {
             position: relative;
             width: 100%;
@@ -197,7 +197,7 @@
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--border);
-            background: #000;
+            background: linear-gradient(135deg, #111827, #0b0f17);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -205,37 +205,41 @@
         }
 
         .video-card-preview img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.75;
+            opacity: 0.8;
             transition: transform 0.3s, opacity 0.3s;
         }
 
         .video-card-preview:hover img {
             transform: scale(1.03);
-            opacity: 0.95;
+            opacity: 1;
         }
 
         .play-overlay-btn {
-            position: absolute;
+            position: relative;
+            z-index: 2;
             background: var(--accent);
             color: #000;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.8);
             transition: transform 0.2s, background 0.2s;
-            padding-left: 3px; /* Centra visualmente el icono de play */
+            padding-left: 4px;
         }
 
         .video-card-preview:hover .play-overlay-btn {
-            transform: scale(1.1);
+            transform: scale(1.12);
             background: #fbbf24;
         }
 
@@ -348,15 +352,14 @@
             <!-- Columna Izquierda -->
             <div class="column">
                 
-                <!-- Panel de Video con Tarjeta Interactiva (Cero Restricciones) -->
+                <!-- Panel de Video con Miniatura Oficial de YouTube -->
                 <div class="panel">
                     <div class="panel-title">📺 Último Análisis en Directo</div>
                     <p>Reviví el programa más reciente directamente haciendo clic en el reproductor.</p>
                     
-                    <!-- Reemplaza el enlace de YouTube por el link exacto de tu último video -->
+                    <!-- Enlace con miniatura real de YouTube incorporada -->
                     <a href="https://www.youtube.com/watch?v=It-xG6qLVmM" target="_blank" class="video-card-preview">
-                        <!-- Podés cambiar la imagen por la miniatura exacta de tu video -->
-                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1000&auto=format&fit=crop" alt="Último video del canal">
+                        <img src="https://img.youtube.com/vi/It-xG6qLVmM/maxresdefault.jpg" alt="Último video del canal">
                         <div class="play-overlay-btn">▶</div>
                     </a>
 
