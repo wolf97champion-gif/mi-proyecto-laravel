@@ -28,14 +28,14 @@
         body {
             background-color: var(--bg-base);
             color: var(--text-main);
-            overflow-x: hidden;
             display: flex;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         /* --- BARRA LATERAL IZQUIERDA FIJA --- */
         .sidebar {
-            width: 260px;
+            width: 270px;
             background: var(--bg-surface);
             border-right: 1px solid var(--border);
             display: flex;
@@ -45,19 +45,19 @@
             left: 0;
             height: 100vh;
             z-index: 1000;
-            padding: 20px 14px;
+            padding: 20px 15px;
         }
 
         .sidebar-brand {
             font-weight: 800;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: #fff;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 8px 10px;
-            margin-bottom: 20px;
+            padding: 10px 12px;
+            margin-bottom: 25px;
         }
 
         .sidebar-brand span {
@@ -67,17 +67,17 @@
         .sidebar-menu {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
             flex: 1;
             overflow-y: auto;
         }
 
         .menu-label {
-            font-size: 0.7rem;
+            font-size: 0.72rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--text-muted);
-            padding: 8px 10px 4px 10px;
+            padding: 10px 12px 5px 12px;
             font-weight: 700;
         }
 
@@ -85,18 +85,18 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 11px 12px;
-            border-radius: 10px;
+            padding: 12px 14px;
+            border-radius: 12px;
             text-decoration: none;
             color: var(--text-main);
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             font-weight: 500;
             transition: all 0.2s ease;
         }
 
         .sidebar-link span.icon {
-            font-size: 1.05rem;
-            width: 18px;
+            font-size: 1.1rem;
+            width: 20px;
             text-align: center;
         }
 
@@ -114,7 +114,7 @@
         .sidebar-divider {
             height: 1px;
             background: var(--border);
-            margin: 10px 0;
+            margin: 12px 0;
         }
 
         .sidebar-link.coming-soon {
@@ -131,29 +131,29 @@
             margin-left: auto;
             background: rgba(245, 158, 11, 0.15);
             color: var(--accent);
-            font-size: 0.65rem;
+            font-size: 0.68rem;
             font-weight: 700;
-            padding: 2px 6px;
+            padding: 2px 7px;
             border-radius: 6px;
             text-transform: uppercase;
         }
 
         .sidebar-footer {
-            padding-top: 12px;
+            padding-top: 15px;
             border-top: 1px solid var(--border);
         }
 
         .sidebar-socials {
             display: flex;
-            gap: 6px;
-            margin-top: 6px;
+            gap: 8px;
+            margin-top: 8px;
         }
 
         .social-pill {
             flex: 1;
-            padding: 7px;
-            border-radius: 7px;
-            font-size: 0.75rem;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 0.78rem;
             font-weight: 600;
             text-align: center;
             text-decoration: none;
@@ -167,19 +167,20 @@
         .social-pill.tiktok:hover { background: #ff0050; border-color: #ff0050; color: #fff; }
 
 
-        /* --- CONTENEDOR DERECHO CORREGIDO Y DISTRIBUIDO --- */
+        /* --- CONTENEDOR DERECHO (OCUPA TODO EL ANCHO DISPONIBLE) --- */
         .main-wrapper {
-            margin-left: 260px;
+            margin-left: 270px; /* Empuja el contenido exactamente lo que mide la barra lateral */
             flex: 1;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            width: calc(100% - 270px);
         }
 
         .top-header {
-            padding: 16px 35px;
+            padding: 20px 40px;
             border-bottom: 1px solid var(--border);
-            background: rgba(7, 9, 14, 0.8);
+            background: rgba(7, 9, 14, 0.85);
             backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
@@ -190,33 +191,34 @@
         }
 
         .top-header h2 {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #fff;
         }
 
         .content-container {
-            max-width: 1150px; /* Ancho controlado para evitar estiramientos grotescos */
-            padding: 30px 35px;
+            padding: 35px 40px;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 25px;
             width: 100%;
+            flex: 1;
         }
 
-        /* Hero / Presentación compacta */
+        /* Hero / Presentación estirada y armónica */
         .hero-section {
             background: linear-gradient(135deg, var(--bg-surface) 0%, #121926 100%);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 30px;
+            padding: 35px;
             text-align: center;
             box-shadow: var(--shadow);
+            width: 100%;
         }
 
         .creator-tag {
             display: inline-block;
-            padding: 5px 14px;
+            padding: 5px 16px;
             background: var(--accent-glow);
             border: 1px solid rgba(245, 158, 11, 0.3);
             border-radius: 20px;
@@ -229,7 +231,7 @@
         }
 
         .hero-section h1 {
-            font-size: 1.9rem;
+            font-size: 2.1rem;
             font-weight: 800;
             margin-bottom: 8px;
             color: #fff;
@@ -241,20 +243,21 @@
 
         .hero-section p {
             color: var(--text-muted);
-            font-size: 0.92rem;
-            max-width: 600px;
+            font-size: 0.95rem;
+            max-width: 700px;
             margin: 0 auto;
-            line-height: 1.45;
+            line-height: 1.5;
         }
 
-        /* Grilla interna para organizar el contenido en dos columnas equilibradas */
+        /* Grilla flexible que distribuye las tarjetas a lo ancho de la pantalla */
         .dashboard-grid {
             display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 24px;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 25px;
+            width: 100%;
         }
 
-        @media (max-width: 1000px) {
+        @media (max-width: 1100px) {
             .dashboard-grid {
                 grid-template-columns: 1fr;
             }
@@ -264,17 +267,18 @@
             background: var(--bg-surface);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 22px;
+            padding: 25px;
             box-shadow: var(--shadow);
             display: flex;
             flex-direction: column;
+            width: 100%;
         }
 
         .panel-title {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -282,17 +286,17 @@
 
         .panel p {
             color: var(--text-muted);
-            font-size: 0.85rem;
-            line-height: 1.45;
-            margin-bottom: 16px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin-bottom: 18px;
         }
 
-        /* Video de YouTube optimizado en tarjeta */
+        /* Reproductor de Video */
         .video-card-preview {
             position: relative;
             width: 100%;
             aspect-ratio: 16/9;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--border);
             background: #000;
@@ -324,13 +328,13 @@
             z-index: 2;
             background: var(--accent);
             color: #000;
-            width: 55px;
-            height: 55px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: bold;
             box-shadow: 0 4px 20px rgba(0,0,0,0.8);
             transition: transform 0.2s, background 0.2s;
@@ -338,19 +342,19 @@
         }
 
         .video-card-preview:hover .play-overlay-btn {
-            transform: scale(1.1);
+            transform: scale(1.12);
             background: #fbbf24;
         }
 
         .card-link-text {
             color: var(--accent);
             font-weight: 600;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 5px;
             text-decoration: none;
-            margin-top: 12px;
+            margin-top: 15px;
         }
 
         .card-link-text:hover { text-decoration: underline; }
@@ -358,7 +362,7 @@
         .btn-main {
             background: var(--accent);
             color: #000;
-            padding: 11px 18px;
+            padding: 14px 20px;
             border-radius: 10px;
             text-align: center;
             font-weight: 700;
@@ -376,9 +380,9 @@
         /* Footer */
         .footer {
             text-align: center;
-            padding: 25px;
+            padding: 25px 40px;
             color: var(--text-muted);
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             border-top: 1px solid var(--border);
             margin-top: auto;
         }
@@ -387,13 +391,13 @@
         @media (max-width: 850px) {
             body { flex-direction: column; }
             .sidebar { position: relative; width: 100%; height: auto; }
-            .main-wrapper { margin-left: 0; }
+            .main-wrapper { margin-left: 0; width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- BARRA LATERAL IZQUIERDA -->
+    <!-- BARRA LATERAL IZQUIERDA FIJA -->
     <aside class="sidebar">
         <a href="#" class="sidebar-brand">
             ⚡ <span>PUNTO DE ENCUENTRO</span>
@@ -441,24 +445,24 @@
         </div>
     </aside>
 
-    <!-- CONTENEDOR DERECHO ORDENADO -->
+    <!-- CONTENEDOR DERECHO QUE OCUPA TODO EL ANCHO -->
     <div class="main-wrapper">
         
         <header class="top-header">
             <h2>Panel de Control</h2>
-            <span style="font-size: 0.82rem; color: var(--text-muted);">Creado por Michael Novoa</span>
+            <span style="font-size: 0.85rem; color: var(--text-muted);">Creado por Michael Novoa</span>
         </header>
 
         <main class="content-container">
 
-            <!-- Presentación (Ancho equilibrado) -->
+            <!-- Presentación -->
             <div class="hero-section">
                 <div class="creator-tag">Sitio Oficial • Transmisiones & Comunidad</div>
                 <h1>El Punto de <span>Encuentro</span></h1>
                 <p>El espacio definitivo de análisis, debates post-partido y toda la pasión del mundo de Boca Juniors conducido por Michael Novoa.</p>
             </div>
 
-            <!-- Grilla equilibrada para que el video y la comunidad no se estiren feo -->
+            <!-- Grilla expansiva -->
             <div class="dashboard-grid">
                 
                 <!-- Panel de Video -->
