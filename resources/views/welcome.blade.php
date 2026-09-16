@@ -485,7 +485,7 @@
                     <div class="panel-title">💬 Comunidad Activa</div>
                     <p>Sumate al grupo oficial de comunicación para enterarte antes de las previas, horarios de stream y debates abiertos.</p>
                     
-                    <a href="#" class="btn-main">Unirse al Grupo de WhatsApp &rarr;</a>
+                    <a href="https://whatsapp.com/channel/0029Vb7Aq78JJhzXb63HwD09" target="_blank" class="btn-main">Unirse al Grupo de WhatsApp &rarr;</a>
                 </div>
 
             </div>
