@@ -8,7 +8,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader --ignore-platform-req=ext-intl
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-req=ext-intl --ignore-platform-req=ext-zip
 # Asegurar permisos y crear la base de datos SQLite
 RUN mkdir -p /var/www/html/database && \
     touch /var/www/html/database/database.sqlite && \
