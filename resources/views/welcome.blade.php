@@ -169,7 +169,7 @@
 
         /* --- CONTENEDOR DERECHO (OCUPA TODO EL ANCHO DISPONIBLE) --- */
         .main-wrapper {
-            margin-left: 270px; /* Empuja el contenido exactamente lo que mide la barra lateral */
+            margin-left: 270px;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -205,7 +205,7 @@
             flex: 1;
         }
 
-        /* Hero / Presentación estirada y armónica */
+        /* Hero / Presentación */
         .hero-section {
             background: linear-gradient(135deg, var(--bg-surface) 0%, #121926 100%);
             border: 1px solid var(--border);
@@ -249,7 +249,7 @@
             line-height: 1.5;
         }
 
-        /* Grilla flexible que distribuye las tarjetas a lo ancho de la pantalla */
+        /* Grilla flexible */
         .dashboard-grid {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
@@ -358,6 +358,39 @@
         }
 
         .card-link-text:hover { text-decoration: underline; }
+
+        /* Estilo para rellenar el espacio de la comunidad con identidad bostera */
+        .community-banner {
+            background: linear-gradient(135deg, rgba(0, 50, 160, 0.25) 0%, rgba(245, 158, 11, 0.15) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            margin: auto 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .community-shield {
+            font-size: 2.8rem;
+            margin-bottom: 2px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+        }
+
+        .community-banner h3 {
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .community-banner p {
+            color: var(--text-main);
+            font-size: 0.9rem;
+            margin-bottom: 0 !important;
+        }
 
         .btn-main {
             background: var(--accent);
@@ -485,6 +518,13 @@
                     <div class="panel-title">💬 Comunidad Activa</div>
                     <p>Sumate al grupo oficial de comunicación para enterarte antes de las previas, horarios de stream y debates abiertos.</p>
                     
+                    <!-- Elemento decorativo para rellenar el espacio vacío -->
+                    <div class="community-banner">
+                        <div class="community-shield">💙💛💙</div>
+                        <h3>LA MITAD + 1</h3>
+                        <p>¡Viví la pasión de Boca con toda la comunidad!</p>
+                    </div>
+
                     <a href="https://whatsapp.com/channel/0029Vb7Aq78JJhzXb63HwD09" target="_blank" class="btn-main">Unirse al Grupo de WhatsApp &rarr;</a>
                 </div>
 
