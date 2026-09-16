@@ -6,15 +6,15 @@
     <title>El Punto de Encuentro | Home 2026</title>
     <style>
         :root {
-            --bg-base: #090a0f;
-            --bg-surface: #12151c;
-            --bg-surface-hover: #1a1f2c;
+            --bg-base: #07090e;
+            --bg-surface: #0f131c;
+            --bg-surface-hover: #161b26;
             --accent: #f59e0b; 
-            --accent-glow: rgba(245, 158, 11, 0.15);
+            --accent-glow: rgba(245, 158, 11, 0.12);
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
-            --border: rgba(255, 255, 255, 0.08);
-            --shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+            --border: rgba(255, 255, 255, 0.07);
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
         }
 
         * {
@@ -27,211 +27,199 @@
         body {
             background-color: var(--bg-base);
             color: var(--text-main);
-            padding-bottom: 100px; 
             overflow-x: hidden;
         }
 
-        /* Hero Profesional con Profundidad */
-        .hero {
-            position: relative;
-            padding: 80px 20px 50px 20px;
-            text-align: center;
-            background: radial-gradient(circle at 50% 10%, #1c2333 0%, var(--bg-base) 70%);
+        /* 1. Navbar Superior Fijo de Marca */
+        .top-nav {
+            position: sticky;
+            top: 0;
+            background: rgba(7, 9, 14, 0.85);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background: var(--accent-glow);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
-            color: #ffffff;
-        }
-
-        .hero h1 span {
-            color: var(--accent);
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto 30px auto;
-            line-height: 1.6;
-        }
-
-        /* Botones de Acción */
-        .cta-group {
+            padding: 15px 30px;
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
         }
 
-        .btn {
-            padding: 12px 26px;
-            border-radius: 10px;
+        .nav-brand {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #fff;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-brand span {
+            color: var(--accent);
+        }
+
+        .nav-socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-btn {
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            font-size: 0.95rem;
-        }
-
-        .btn-main {
-            background-color: var(--accent);
-            color: #000;
-        }
-
-        .btn-main:hover {
-            transform: translateY(-2px);
-            background-color: #fbbf24;
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
-        }
-
-        .btn-sec {
-            background-color: var(--bg-surface);
+            background: var(--bg-surface);
             color: var(--text-main);
             border: 1px solid var(--border);
+            transition: all 0.2s;
         }
 
-        .btn-sec:hover {
-            background-color: var(--bg-surface-hover);
-            transform: translateY(-2px);
-            border-color: rgba(255,255,255,0.2);
+        .social-btn.youtube:hover {
+            background: #cc0000;
+            border-color: #cc0000;
+            color: #fff;
         }
 
-        /* Contenedor y Secciones */
-        .container {
-            max-width: 1100px;
+        .social-btn.tiktok:hover {
+            background: #ff0050;
+            border-color: #ff0050;
+            color: #fff;
+        }
+
+        /* 2. Contenedor Principal Organizado */
+        .main-container {
+            max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
-        }
-
-        .section-header {
-            margin-bottom: 25px;
-        }
-
-        .section-header h2 {
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
-
-        /* Banner de Último Video / Destacado */
-        .featured-banner {
-            background: linear-gradient(135deg, #12151c 0%, #1a2233 100%);
-            border: 1px solid rgba(245, 158, 11, 0.25);
-            border-radius: 18px;
-            padding: 30px;
-            margin-bottom: 50px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
+            gap: 40px;
         }
 
-        .featured-tag {
-            font-size: 0.75rem;
-            background: rgba(245, 158, 11, 0.2);
-            color: var(--accent);
-            padding: 4px 10px;
-            border-radius: 6px;
-            width: fit-content;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .featured-banner h3 {
-            font-size: 1.4rem;
-            color: #fff;
-            line-height: 1.4;
-        }
-
-        .featured-banner p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Grid de Tarjetas */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--bg-surface);
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: var(--shadow);
+        /* Hero Integrado */
+        .hero-section {
+            background: linear-gradient(135deg, var(--bg-surface) 0%, #121824 100%);
             border: 1px solid var(--border);
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(245, 158, 11, 0.4);
-            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.7);
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        .card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 12px;
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
             color: #fff;
         }
 
-        .card p {
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-size: 0.95rem;
-            margin-bottom: 25px;
+        .hero-section h1 span {
+            color: var(--accent);
         }
 
-        .card-link {
+        .hero-section p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+            line-height: 1.5;
+        }
+
+        /* 3. Secciones en Grid de Contenido Completo */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .column-main {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .column-side {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .panel {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: border-color 0.2s;
+        }
+
+        .panel:hover {
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        .panel-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .panel p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para el reproductor o video destacado */
+        .video-box {
+            background: #000;
+            border-radius: 10px;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .video-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .play-button {
+            position: absolute;
+            background: var(--accent);
+            color: #000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .action-link {
             color: var(--accent);
             text-decoration: none;
             font-weight: 600;
@@ -241,125 +229,101 @@
             gap: 5px;
         }
 
-        .card-link:hover {
+        .action-link:hover {
             text-decoration: underline;
         }
 
-        /* Footer */
+        /* 4. Footer Limpio */
         .footer {
             text-align: center;
             padding: 40px 20px;
             color: var(--text-muted);
             font-size: 0.85rem;
             border-top: 1px solid var(--border);
-            margin-top: 50px;
-        }
-
-        /* Navbar Inferior Fijo */
-        .bottom-nav {
-            position: fixed;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 500px;
-            background: rgba(18, 21, 28, 0.9);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            display: flex;
-            justify-content: space-around;
-            padding: 12px 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            z-index: 1000;
-        }
-
-        .nav-item {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2px;
-        }
-
-        .nav-item:hover, .nav-item.active {
-            color: var(--accent);
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-badge">Comunidad & Análisis</div>
-        <h1>El Punto de <span>Encuentro</span></h1>
-        <p>El espacio definitivo para vivir el análisis, debates post-partido, estadísticas y la mejor interacción en comunidad.</p>
-        <div class="cta-group">
-            <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="btn btn-main">Ver YouTube</a>
-            <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="btn btn-sec">Seguir en TikTok</a>
+    <!-- Navbar Superior -->
+    <nav class="top-nav">
+        <a href="#" class="nav-brand">⚡ EL PUNTO DE <span>ENCUENTRO</span></a>
+        <div class="nav-socials">
+            <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="social-btn youtube">YouTube</a>
+            <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="social-btn tiktok">TikTok</a>
         </div>
-    </header>
+    </nav>
 
-    <!-- Contenido Principal -->
-    <main class="container">
+    <!-- Contenedor General -->
+    <div class="main-container">
 
-        <!-- Banner Último Análisis / Video -->
-        <div class="featured-banner">
-            <span class="featured-tag">📺 Último Análisis Destacado</span>
-            <h3>Análisis Post Partido - Previa de Sudamericana & Cierre de Semana</h3>
-            <p>Reviví el análisis completo de la victoria, el panorama del equipo de cara al próximo partido de copa y todo lo que dejó la semana.</p>
-            <a href="https://www.youtube.com/watch?v=It-xG6qLVmM" target="_blank" class="card-link">Mirar video completo en YouTube &rarr;</a>
-        </div>
+        <!-- Hero Centralizado -->
+        <header class="hero-section">
+            <h1>El espacio definitivo de <span>análisis y debate</span></h1>
+            <p>Toda la previa, reacciones post-partido, estadísticas en vivo y la comunidad más activa reunidas en una sola plataforma central.</p>
+        </header>
 
-        <div class="section-header">
-            <h2>Secciones Interactivas</h2>
-            <p>Navegá por las herramientas principales del canal</p>
-        </div>
-
-        <div class="grid">
-            <!-- Tarjeta 1 -->
-            <div class="card">
-                <div>
-                    <h3>El Podio del Partido</h3>
-                    <p>Elegí a los tres jugadores destacados de cada encuentro. Tu voto alimenta las estadísticas y el debate del próximo stream.</p>
+        <!-- Grid de Contenido Estructurado -->
+        <div class="content-grid">
+            
+            <!-- Columna Izquierda (Principal) -->
+            <div class="column-main">
+                <!-- Video Destacado -->
+                <div class="panel">
+                    <div class="panel-title">📺 Último Análisis en Directo</div>
+                    <p>Análisis Post Partido - Previa de Sudamericana y debate abierto sobre el rendimiento del equipo.</p>
+                    <div class="video-box">
+                        <!-- Aquí puedes incrustar tu iframe de YouTube o miniatura -->
+                        <div class="play-button">▶</div>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="action-link">Ver transmisión completa en YouTube &rarr;</a>
+                    </div>
                 </div>
-                <a href="#" class="card-link">Participar del Podio &rarr;</a>
-            </div>
-            <!-- Tarjeta 2 -->
-            <div class="card">
-                <div>
-                    <h3>Tablas y Estadísticas</h3>
-                    <p>Seguí de cerca la tabla anual, la posición en el torneo y el rendimiento detallado fecha a fecha con análisis exclusivo.</p>
+
+                <!-- Secciones Interactivas -->
+                <div class="panel">
+                    <div class="panel-title">⚡ Herramientas del Canal</div>
+                    <p>Participá activamente de las dinámicas del stream y consultá los datos clave de la temporada.</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div style="background: var(--bg-base); padding: 15px; border-radius: 10px; border: 1px solid var(--border);">
+                            <h4 style="color: #fff; margin-bottom: 5px; font-size: 1rem;">Podio del Partido</h4>
+                            <p style="font-size: 0.85rem; margin-bottom: 10px;">Votá a los mejores jugadores.</p>
+                            <a href="#" class="action-link" style="font-size: 0.85rem;">Votar ahora &rarr;</a>
+                        </div>
+                        <div style="background: var(--bg-base); padding: 15px; border-radius: 10px; border: 1px solid var(--border);">
+                            <h4 style="color: #fff; margin-bottom: 5px; font-size: 1rem;">Tablas & Stats</h4>
+                            <p style="font-size: 0.85rem; margin-bottom: 10px;">Seguí la tabla y el rendimiento.</p>
+                            <a href="#" class="action-link" style="font-size: 0.85rem;">Ver datos &rarr;</a>
+                        </div>
+                    </div>
                 </div>
-                <a href="#" class="card-link">Ver Tablas &rarr;</a>
             </div>
-            <!-- Tarjeta 3 -->
-            <div class="card">
-                <div>
-                    <h3>Comunidad Activa</h3>
-                    <p>Sumate al grupo de comunicación directa y enterate antes que nadie de las previas, reacciones y transmisiones en vivo.</p>
+
+            <!-- Columna Derecha (Lateral de Comunidad) -->
+            <div class="column-side">
+                <div class="panel">
+                    <div class="panel-title">💬 Comunidad Activa</div>
+                    <p>Unite al grupo exclusivo para enterarte de los horarios de stream, debates y la previa con toda la comunidad.</p>
+                    <a href="#" class="action-link" style="background: var(--accent); color: #000; padding: 10px 16px; border-radius: 8px; justify-content: center; width: 100%; text-align: center;">Unirme al Grupo &rarr;</a>
                 </div>
-                <a href="#" class="card-link">Unirme al Grupo &rarr;</a>
+
+                <div class="panel">
+                    <div class="panel-title">📱 Redes Oficiales</div>
+                    <p>Seguinos en TikTok para clips cortos, polémicas y recortes imperdibles de cada transmisión.</p>
+                    <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="action-link">Ir al TikTok de Michael &rarr;</a>
+                </div>
             </div>
+
         </div>
-    </main>
+
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2026 EL PUNTO DE ENCUENTRO. Todos los derechos reservados.</p>
     </footer>
-
-    <!-- Navbar Inferior Fijo -->
-    <nav class="bottom-nav">
-        <a href="#" class="nav-item active">🏠 <span>Inicio</span></a>
-        <a href="#" class="nav-item">📊 <span>Podio</span></a>
-        <a href="#" class="nav-item">📈 <span>Tablas</span></a>
-        <a href="#" class="nav-item">💬 <span>Comunidad</span></a>
-    </nav>
 
 </body>
 </html>
