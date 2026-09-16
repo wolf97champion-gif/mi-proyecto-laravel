@@ -189,8 +189,8 @@
             margin-bottom: 20px;
         }
 
-        /* Tarjeta de Reproductor / Video Segura y Funcional */
-        .video-card-preview {
+        /* Reproductor de YouTube Real Embebido con Reproducción Habilitada */
+        .video-container {
             position: relative;
             width: 100%;
             aspect-ratio: 16/9;
@@ -198,43 +198,12 @@
             overflow: hidden;
             border: 1px solid var(--border);
             background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
         }
 
-        .video-card-preview img {
+        .video-container iframe {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 0.75;
-            transition: transform 0.3s;
-        }
-
-        .video-card-preview:hover img {
-            transform: scale(1.03);
-            opacity: 0.9;
-        }
-
-        .play-overlay-btn {
-            position: absolute;
-            background: var(--accent);
-            color: #000;
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            font-weight: bold;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-            transition: transform 0.2s;
-        }
-
-        .video-card-preview:hover .play-overlay-btn {
-            transform: scale(1.1);
+            border: none;
         }
 
         /* Tarjetas de Navegación de Contenido (Para ir a páginas internas cargadas) */
@@ -281,6 +250,11 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
+            text-decoration: none;
+        }
+
+        .card-link-text:hover {
+            text-decoration: underline;
         }
 
         .btn-main {
@@ -341,20 +315,18 @@
             <!-- Columna Izquierda: Video Funcional y Tarjetas de Navegación -->
             <div class="column">
                 
-                <!-- Panel de Video con Enlace Directo y Seguro -->
+                <!-- Panel del Reproductor Real de YouTube -->
                 <div class="panel">
                     <div class="panel-title">📺 Último Análisis en Directo</div>
-                    <p>Mirá el programa más reciente o hacé clic para reproducirlo al instante en YouTube.</p>
+                    <p>Reviví el programa más reciente directamente desde el reproductor oficial del canal.</p>
                     
-                    <!-- Tarjeta previsualización interactiva (evita errores de bloqueo externo de iframe) -->
-                    <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="video-card-preview">
-                        <!-- Podes cambiar esta imagen por la miniatura exacta de tu último video de YouTube -->
-                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1000&auto=format&fit=crop" alt="Último video del canal">
-                        <div class="play-overlay-btn">▶</div>
-                    </a>
+                    <!-- Reproductor iframe embebido con permisos completos -->
+                    <div class="video-container">
+                        <iframe src="https://www.youtube-nocookie.com/embed/It-xG6qLVmM" title="Último video del canal" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
 
                     <div style="margin-top: 15px;">
-                        <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="card-link-text">Ver todas las transmisiones en YouTube &rarr;</a>
+                        <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="card-link-text">Ver más transmisiones en YouTube &rarr;</a>
                     </div>
                 </div>
 
