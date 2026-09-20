@@ -1,260 +1,136 @@
 <?php
+declare(strict_types=1);
+
 /**
- * HISTORIA DE BOCA JUNIORS (Diseño en Tarjetas y Épocas)
+ * ESTADÍSTICAS / HISTORIA DE BOCA JUNIORS
  * --------------------------------------------------------------
- * Línea de tiempo cronológica completa de 1905 a 2025.
+ * Sala de estadísticas del sitio "El Punto de Encuentro".
+ * El contenido es la línea de tiempo cronológica de 1905 a 2025.
+ *
+ * NOTA: el contenido y los datos NO se modificaron; solo se mejoró
+ * la estructura, el mantenimiento y las buenas prácticas del código.
  */
 
+/* -------------------------------------------------------------------------
+ * 1. CONFIGURACIÓN DE NAVEGACIÓN (menú lateral)
+ *    Se define en un arreglo para no repetir HTML y facilitar cambios.
+ * ---------------------------------------------------------------------- */
+$menuPrincipal = [
+    ['archivo' => 'index.php',         'icono' => '🏠', 'texto' => 'Inicio'],
+    ['archivo' => 'podio.php',         'icono' => '🏆', 'texto' => 'Podio de Jugadores'],
+    ['archivo' => 'estadisticas.php',  'icono' => '📊', 'texto' => 'Estadísticas'],
+    ['archivo' => 'foro.php',          'icono' => '💬', 'texto' => 'Foro y Debates'],
+    ['archivo' => 'plantel.php',       'icono' => '👥', 'texto' => 'Plantel Actual'],
+];
+
+// Enlaces del bloque "Archivo Histórico" (contenido futuro).
+$menuHistorico = [
+    ['archivo' => 'historia.php', 'icono' => '📜', 'texto' => 'Sección de Historia'],
+];
+
+/* -------------------------------------------------------------------------
+ * 2. DATOS DE CONTENIDO (sin cambios)
+ * ---------------------------------------------------------------------- */
 $epocas = [
-    'todos' => 'Todos los hitos',
+    'todos'     => 'Todos los hitos',
     'fundacion' => 'Orígenes y Fundación',
-    'amateur' => 'Era Amateur y Primeros Títulos',
-    'gloria' => 'La Época Dorada y Copas'
+    'amateur'   => 'Era Amateur y Primeros Títulos',
+    'gloria'    => 'La Época Dorada y Copas',
 ];
 
 $hitos = [
-    [
-        'epoca' => 'fundacion',
-        'anio' => '1905',
-        'titulo' => 'Nace una pasión',
-        'texto' => 'El 3 de abril de 1905, un grupo de jóvenes del barrio de La Boca (Esteban Baglietto, Alfredo Scarpatti, Santiago Sana y los hermanos Farenga) fundó el club en la Plaza Solís.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'fundacion',
-        'anio' => '1910',
-        'titulo' => 'Los colores del alma',
-        'texto' => 'Tras usar camisetas celestes y negras con tiras blancas, se adoptaron definitivamente los colores azul y amarillo inspirados en la bandera del primer barco sueco ingresado al puerto.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'amateur',
-        'anio' => '1913',
-        'titulo' => 'El salto a Primera',
-        'texto' => 'Boca llegó a la máxima categoría del fútbol argentino y desde entonces se mantiene ininterrumpidamente, siendo el único equipo que nunca descendió.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'amateur',
-        'anio' => '1919',
-        'titulo' => 'El primer título oficial',
-        'texto' => 'El club se consagró campeón invicto del torneo de Primera División de la Asociación Argentina de Football, iniciando su rica historia de conquistas.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'amateur',
-        'anio' => '1920',
-        'titulo' => 'Bicampeonato y consolidación',
-        'texto' => 'Boca revalidó su poderío consagrándose bicampeón del fútbol argentino de manera consecutiva, afianzándose en la máxima categoría.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'amateur',
-        'anio' => '1923',
-        'titulo' => 'Nuevas estrellas locales',
-        'texto' => 'El xeneize sumó un nuevo campeonato de Primera División en una época de crecimiento exponencial de socios y popularidad barrial.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'amateur',
-        'anio' => '1925',
-        'titulo' => 'La histórica gira europea',
-        'texto' => 'Boca realizó una inolvidable gira por Europa jugando 19 partidos y ganando 15, bautizando a su parcialidad para siempre como "La 12" (el jugador número doce).',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'amateur',
-        'anio' => '1926',
-        'titulo' => 'Campeón invicto de nuevo',
-        'texto' => 'Otro año brillante para la institución, quedándose con el campeonato de la Asociación Amateurs de Football sin conocer la derrota.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'amateur',
-        'anio' => '1931',
-        'titulo' => 'Primer campeón profesional',
-        'texto' => 'Boca se consagró como el primer campeón de la era profesional del fútbol argentino bajo la conducción técnica de Mario Fortunato y una delantera letal.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1934',
-        'titulo' => 'Campeón de la Liga Argentina',
-        'texto' => 'Consolidado ya el profesionalismo, el equipo sumó un nuevo título oficial brillando en las canchas de todo el país con figuras históricas.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1935',
-        'titulo' => 'Bicampeonato profesional',
-        'texto' => 'Boca obtuvo el título de Primera División repitiendo la gloria y demostrando la supremacía absoluta en los primeros años del profesionalismo.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1940',
-        'titulo' => 'Inauguración de La Bombonera',
-        'texto' => 'El 25 de mayo de 1940 se inauguró el mítico estadio Alberto J. Armando (La Bombonera), un templo mundial del fútbol reconocido por su acústica y cercanía.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1943',
-        'titulo' => 'El bicampeonato de los 40',
-        'texto' => 'Con una delantera temible y un juego vistoso, Boca se quedó con los campeonatos de Primera División de 1943 y repitió la corona en 1944.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1954',
-        'titulo' => 'Fin de la sequía local',
-        'texto' => 'Boca rompió una racha de diez años sin títulos locales coronándose campeón de Primera División con figuras estelares como José Borello y el arquero Eladio Musimessi.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1962',
-        'titulo' => 'El penal de Antonio Roma',
-        'texto' => 'Una consagración inolvidable que quedó en la historia gracias al histórico penal atajado por Antonio Roma a Delem en la última fecha frente a River.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1965',
-        'titulo' => 'Campeón con sello propio',
-        'texto' => 'Boca se consagró campeón del torneo de Primera División de la mano de Aristegui, Rojas y un plantel plagado de entrega y mística.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1969',
-        'titulo' => 'El Nacional en Núñez',
-        'texto' => 'Con Alfredo Di Stéfano como DT, Boca dio la vuelta olímpica en la cancha de River empatando 2-2 y se consagró campeón del Torneo Nacional.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1970',
-        'titulo' => 'Metropolitano inolvidable',
-        'texto' => 'Boca alzó el título del Torneo Nacional tras vencer a Rosario Central en una sufrida y recordada final disputada en la cancha de River.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1976',
-        'titulo' => 'El doblete de la mano del Toto Lorenzo',
-        'texto' => 'Con Juan Carlos Lorenzo como DT, el club conquistó tanto el Torneo Metropolitano como el Torneo Nacional en un año de gloria absoluta.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1977',
-        'titulo' => 'Primera Copa Libertadores y del Mundo',
-        'texto' => 'Boca conquistó su primera Copa Libertadores venciendo a Cruzeiro y cerró el año ganando la Copa Intercontinental al Borussia Mönchengladbach.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1978',
-        'titulo' => 'Bicampeón de América',
-        'texto' => 'El equipo del Toto Lorenzo ratificó su jerarquía internacional obteniendo la Copa Libertadores por segunda vez consecutiva ante el Deportivo Cali.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1981',
-        'titulo' => 'Maradona y el Metropolitano',
-        'texto' => 'Con Diego Armando Maradona como máxima figura y estandarte, el Xeneize se consagró campeón del Torneo Metropolitano en una campaña inolvidable.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1992',
-        'titulo' => 'El Apertura con Tabárez',
-        'texto' => 'Tras más de una década sin títulos locales de liga, el equipo dirigido por Oscar Washington Tabárez se consagró campeón del Torneo Apertura.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '1998',
-        'titulo' => 'Arranca la era dorada de Bianchi',
-        'texto' => 'Boca se consagró campeón invicto del Torneo Apertura 1998, iniciando una de las etapas más ganadoras y legendarias de la historia del club.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '2000',
-        'titulo' => 'La cima del mundo con Bianchi',
-        'texto' => 'Boca ganó la Copa Libertadores y venció al Real Madrid en Tokio para levantar la Intercontinental, con actuaciones estelares de Riquelme y Palermo.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '2001',
-        'titulo' => 'Bicampeón de América',
-        'texto' => 'El equipo de Carlos Bianchi revalidó su corona continental ganando la Copa Libertadores de América de forma consecutiva frente al Cruz Azul.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '2003',
-        'titulo' => 'Triplete histórico y Milán a sus pies',
-        'texto' => 'Boca conquistó otra Copa Libertadores y vapuleó al AC Milan en Japón por penales para alzar su tercera Copa Intercontinental con un inspirado Riquelme.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '2007',
-        'titulo' => 'La sexta Copa Libertadores',
-        'texto' => 'Con un nivel superlativo de Juan Román Riquelme a lo largo de todo el certamen, Boca alzó su sexta Copa Libertadores tras superar a Gremio en la final.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '2011',
-        'titulo' => 'Invicto y campeón con Falcioni',
-        'texto' => 'Boca se consagró campeón del Torneo Apertura de manera invicta y con una solidez defensiva impresionante bajo la conducción de Julio César Falcioni.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '2015',
-        'titulo' => 'Campeonato y Copa Argentina',
-        'texto' => 'El equipo dirigido por Rodolfo Arruabarrena logró un doblete fundamental quedándose con el Campeonato de Primera División y la Copa Argentina.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '2020',
-        'titulo' => 'Superliga sobre la hora',
-        'texto' => 'Con Miguel Ángel Russo como DT y un gol agónico de Carlos Tevez ante Gimnasia, Boca le arrebató el campeonato a su clásico rival en la última fecha.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '2022',
-        'titulo' => 'Nuevo título de Liga Profesional',
-        'texto' => 'Boca se consagró campeón de la Liga Profesional tras una emocionante definición en La Bombonera en una definición para el infarto.',
-        'foto' => ''
-    ],
-    [
-        'epoca' => 'gloria',
-        'anio' => '2025',
-        'titulo' => '120 Años de Historia',
-        'texto' => 'Boca celebró su 120 aniversario consolidado como el club más popular de la Argentina y uno de los máximos referentes del fútbol mundial.',
-        'foto' => ''
-    ]
+    ['epoca' => 'fundacion', 'anio' => '1905', 'titulo' => 'Nace una pasión',
+        'texto' => 'El 3 de abril de 1905, un grupo de jóvenes del barrio de La Boca (Esteban Baglietto, Alfredo Scarpatti, Santiago Sana y los hermanos Farenga) fundó el club en la Plaza Solís.', 'foto' => ''],
+    ['epoca' => 'fundacion', 'anio' => '1910', 'titulo' => 'Los colores del alma',
+        'texto' => 'Tras usar camisetas celestes y negras con tiras blancas, se adoptaron definitivamente los colores azul y amarillo inspirados en la bandera del primer barco sueco ingresado al puerto.', 'foto' => ''],
+    ['epoca' => 'amateur', 'anio' => '1913', 'titulo' => 'El salto a Primera',
+        'texto' => 'Boca llegó a la máxima categoría del fútbol argentino y desde entonces se mantiene ininterrumpidamente, siendo el único equipo que nunca descendió.', 'foto' => ''],
+    ['epoca' => 'amateur', 'anio' => '1919', 'titulo' => 'El primer título oficial',
+        'texto' => 'El club se consagró campeón invicto del torneo de Primera División de la Asociación Argentina de Football, iniciando su rica historia de conquistas.', 'foto' => ''],
+    ['epoca' => 'amateur', 'anio' => '1920', 'titulo' => 'Bicampeonato y consolidación',
+        'texto' => 'Boca revalidó su poderío consagrándose bicampeón del fútbol argentino de manera consecutiva, afianzándose en la máxima categoría.', 'foto' => ''],
+    ['epoca' => 'amateur', 'anio' => '1923', 'titulo' => 'Nuevas estrellas locales',
+        'texto' => 'El xeneize sumó un nuevo campeonato de Primera División en una época de crecimiento exponencial de socios y popularidad barrial.', 'foto' => ''],
+    ['epoca' => 'amateur', 'anio' => '1925', 'titulo' => 'La histórica gira europea',
+        'texto' => 'Boca realizó una inolvidable gira por Europa jugando 19 partidos y ganando 15, bautizando a su parcialidad para siempre como "La 12" (el jugador número doce).', 'foto' => ''],
+    ['epoca' => 'amateur', 'anio' => '1926', 'titulo' => 'Campeón invicto de nuevo',
+        'texto' => 'Otro año brillante para la institución, quedándose con el campeonato de la Asociación Amateurs de Football sin conocer la derrota.', 'foto' => ''],
+    ['epoca' => 'amateur', 'anio' => '1931', 'titulo' => 'Primer campeón profesional',
+        'texto' => 'Boca se consagró como el primer campeón de la era profesional del fútbol argentino bajo la conducción técnica de Mario Fortunato y una delantera letal.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1934', 'titulo' => 'Campeón de la Liga Argentina',
+        'texto' => 'Consolidado ya el profesionalismo, el equipo sumó un nuevo título oficial brillando en las canchas de todo el país con figuras históricas.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1935', 'titulo' => 'Bicampeonato profesional',
+        'texto' => 'Boca obtuvo el título de Primera División repitiendo la gloria y demostrando la supremacía absoluta en los primeros años del profesionalismo.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1940', 'titulo' => 'Inauguración de La Bombonera',
+        'texto' => 'El 25 de mayo de 1940 se inauguró el mítico estadio Alberto J. Armando (La Bombonera), un templo mundial del fútbol reconocido por su acústica y cercanía.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1943', 'titulo' => 'El bicampeonato de los 40',
+        'texto' => 'Con una delantera temible y un juego vistoso, Boca se quedó con los campeonatos de Primera División de 1943 y repitió la corona en 1944.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1954', 'titulo' => 'Fin de la sequía local',
+        'texto' => 'Boca rompió una racha de diez años sin títulos locales coronándose campeón de Primera División con figuras estelares como José Borello y el arquero Eladio Musimessi.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1962', 'titulo' => 'El penal de Antonio Roma',
+        'texto' => 'Una consagración inolvidable que quedó en la historia gracias al histórico penal atajado por Antonio Roma a Delem en la última fecha frente a River.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1965', 'titulo' => 'Campeón con sello propio',
+        'texto' => 'Boca se consagró campeón del torneo de Primera División de la mano de Aristegui, Rojas y un plantel plagado de entrega y mística.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1969', 'titulo' => 'El Nacional en Núñez',
+        'texto' => 'Con Alfredo Di Stéfano como DT, Boca dio la vuelta olímpica en la cancha de River empatando 2-2 y se consagró campeón del Torneo Nacional.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1970', 'titulo' => 'Metropolitano inolvidable',
+        'texto' => 'Boca alzó el título del Torneo Nacional tras vencer a Rosario Central en una sufrida y recordada final disputada en la cancha de River.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1976', 'titulo' => 'El doblete de la mano del Toto Lorenzo',
+        'texto' => 'Con Juan Carlos Lorenzo como DT, el club conquistó tanto el Torneo Metropolitano como el Torneo Nacional en un año de gloria absoluta.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1977', 'titulo' => 'Primera Copa Libertadores y del Mundo',
+        'texto' => 'Boca conquistó su primera Copa Libertadores venciendo a Cruzeiro y cerró el año ganando la Copa Intercontinental al Borussia Mönchengladbach.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1978', 'titulo' => 'Bicampeón de América',
+        'texto' => 'El equipo del Toto Lorenzo ratificó su jerarquía internacional obteniendo la Copa Libertadores por segunda vez consecutiva ante el Deportivo Cali.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1981', 'titulo' => 'Maradona y el Metropolitano',
+        'texto' => 'Con Diego Armando Maradona como máxima figura y estandarte, el Xeneize se consagró campeón del Torneo Metropolitano en una campaña inolvidable.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1992', 'titulo' => 'El Apertura con Tabárez',
+        'texto' => 'Tras más de una década sin títulos locales de liga, el equipo dirigido por Oscar Washington Tabárez se consagró campeón del Torneo Apertura.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '1998', 'titulo' => 'Arranca la era dorada de Bianchi',
+        'texto' => 'Boca se consagró campeón invicto del Torneo Apertura 1998, iniciando una de las etapas más ganadoras y legendarias de la historia del club.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '2000', 'titulo' => 'La cima del mundo con Bianchi',
+        'texto' => 'Boca ganó la Copa Libertadores y venció al Real Madrid en Tokio para levantar la Intercontinental, con actuaciones estelares de Riquelme y Palermo.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '2001', 'titulo' => 'Bicampeón de América',
+        'texto' => 'El equipo de Carlos Bianchi revalidó su corona continental ganando la Copa Libertadores de América de forma consecutiva frente al Cruz Azul.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '2003', 'titulo' => 'Triplete histórico y Milán a sus pies',
+        'texto' => 'Boca conquistó otra Copa Libertadores y vapuleó al AC Milan en Japón por penales para alzar su tercera Copa Intercontinental con un inspirado Riquelme.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '2007', 'titulo' => 'La sexta Copa Libertadores',
+        'texto' => 'Con un nivel superlativo de Juan Román Riquelme a lo largo de todo el certamen, Boca alzó su sexta Copa Libertadores tras superar a Gremio en la final.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '2011', 'titulo' => 'Invicto y campeón con Falcioni',
+        'texto' => 'Boca se consagró campeón del Torneo Apertura de manera invicta y con una solidez defensiva impresionante bajo la conducción de Julio César Falcioni.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '2015', 'titulo' => 'Campeonato y Copa Argentina',
+        'texto' => 'El equipo dirigido por Rodolfo Arruabarrena logró un doblete fundamental quedándose con el Campeonato de Primera División y la Copa Argentina.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '2020', 'titulo' => 'Superliga sobre la hora',
+        'texto' => 'Con Miguel Ángel Russo como DT y un gol agónico de Carlos Tevez ante Gimnasia, Boca le arrebató el campeonato a su clásico rival en la última fecha.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '2022', 'titulo' => 'Nuevo título de Liga Profesional',
+        'texto' => 'Boca se consagró campeón de la Liga Profesional tras una emocionante definición en La Bombonera en una definición para el infarto.', 'foto' => ''],
+    ['epoca' => 'gloria', 'anio' => '2025', 'titulo' => '120 Años de Historia',
+        'texto' => 'Boca celebró su 120 aniversario consolidado como el club más popular de la Argentina y uno de los máximos referentes del fútbol mundial.', 'foto' => ''],
 ];
 
 $datos = [
     ['1905', 'Año de fundación'],
     ['1940', 'Inauguración de La Bombonera'],
-    ['6', 'Copas Libertadores'],
-    ['3', 'Copas Intercontinentales'],
+    ['6',    'Copas Libertadores'],
+    ['3',    'Copas Intercontinentales'],
 ];
 
-function h($v): string {
-    return htmlspecialchars((string)$v);
+/* -------------------------------------------------------------------------
+ * 3. HELPERS
+ * ---------------------------------------------------------------------- */
+
+/** Escapa texto para insertarlo con seguridad en HTML. */
+function h(mixed $v): string {
+    return htmlspecialchars((string) $v, ENT_QUOTES, 'UTF-8');
+}
+
+/** Devuelve el nombre del archivo actual (p. ej. "estadisticas.php"). */
+function paginaActual(): string {
+    return basename($_SERVER['PHP_SELF'] ?? '');
+}
+
+/** Indica si un enlace del menú corresponde a la página actual. */
+function esActivo(string $archivo): bool {
+    return $archivo === paginaActual();
 }
 ?>
 <!DOCTYPE html>
@@ -262,8 +138,11 @@ function h($v): string {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estadísticas e historia de Boca Juniors: línea de tiempo de hitos de 1905 a 2025 en El Punto de Encuentro.">
+    <meta name="theme-color" content="#07090e">
     <title>Historia de Boca Juniors | El Punto de Encuentro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -611,24 +490,32 @@ function h($v): string {
     <!-- BARRA LATERAL -->
     <aside class="sidebar">
         <a href="index.php" class="sidebar-brand">⚡ <span>PUNTO DE ENCUENTRO</span></a>
-        <div class="sidebar-menu">
+        <nav class="sidebar-menu" aria-label="Menú principal">
             <div class="menu-label">Menú Principal</div>
-            <a href="index.php" class="sidebar-link"><span class="icon">🏠</span> Inicio</a>
-            <a href="podio.php" class="sidebar-link"><span class="icon">🏆</span> Podio de Jugadores</a>
-            <a href="estadisticas.php" class="sidebar-link"><span class="icon">📊</span> Estadísticas</a>
-            <a href="foro.php" class="sidebar-link"><span class="icon">💬</span> Foro y Debates</a>
-            <a href="plantel.php" class="sidebar-link"><span class="icon">👥</span> Plantel Actual</a>
+            <?php foreach ($menuPrincipal as $item): ?>
+                <a href="<?= h($item['archivo']) ?>"
+                   class="sidebar-link<?= esActivo($item['archivo']) ? ' active' : '' ?>"
+                   <?= esActivo($item['archivo']) ? 'aria-current="page"' : '' ?>>
+                    <span class="icon"><?= $item['icono'] ?></span> <?= h($item['texto']) ?>
+                </a>
+            <?php endforeach; ?>
+
             <div class="sidebar-divider"></div>
+
             <div class="menu-label">Archivo Histórico</div>
-            <a href="#" class="sidebar-link active" style="cursor: default;">
-                <span class="icon">📜</span> Sección de Historia
-            </a>
-        </div>
+            <?php foreach ($menuHistorico as $item): ?>
+                <a href="<?= h($item['archivo']) ?>"
+                   class="sidebar-link<?= esActivo($item['archivo']) ? ' active' : '' ?>"
+                   <?= esActivo($item['archivo']) ? 'aria-current="page"' : '' ?>>
+                    <span class="icon"><?= $item['icono'] ?></span> <?= h($item['texto']) ?>
+                </a>
+            <?php endforeach; ?>
+        </nav>
         <div class="sidebar-footer">
             <div class="menu-label" style="padding-left:0; margin-bottom: 2px;">Redes Oficiales</div>
             <div class="sidebar-socials">
-                <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="social-pill youtube">YouTube</a>
-                <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="social-pill tiktok">TikTok</a>
+                <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" rel="noopener" class="social-pill youtube">YouTube</a>
+                <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" rel="noopener" class="social-pill tiktok">TikTok</a>
             </div>
         </div>
     </aside>
@@ -648,18 +535,19 @@ function h($v): string {
 
             <div class="datos">
                 <?php foreach ($datos as [$numero, $texto]): ?>
-                    <!-- Conectado dinámicamente con estadisticas.php -->
-                    <a href="estadisticas.php" class="dato">
+                    <div class="dato">
                         <strong><?= h($numero) ?></strong>
                         <span><?= h($texto) ?></span>
-                    </a>
+                    </div>
                 <?php endforeach; ?>
             </div>
 
             <!-- FILTROS -->
             <div class="filtros-container">
                 <?php foreach ($epocas as $key => $label): ?>
-                    <button class="filtro-btn <?= $key === 'todos' ? 'active' : '' ?>" onclick="filtrarEpoca('<?= h($key) ?>', this)">
+                    <button type="button"
+                            class="filtro-btn<?= $key === 'todos' ? ' active' : '' ?>"
+                            data-epoca="<?= h($key) ?>">
                         <?= h($label) ?>
                     </button>
                 <?php endforeach; ?>
@@ -668,7 +556,7 @@ function h($v): string {
             <!-- TARJETAS -->
             <div class="cards-grid" id="gridHitos">
                 <?php foreach ($hitos as $hito): ?>
-                    <div class="historia-card" data-epoca="<?= h($hito['epoca']) ?>">
+                    <article class="historia-card" data-epoca="<?= h($hito['epoca']) ?>">
                         <div class="card-img">
                             <?php if (!empty($hito['foto'])): ?>
                                 <img src="<?= h($hito['foto']) ?>" alt="<?= h($hito['titulo']) ?>" loading="lazy">
@@ -678,10 +566,10 @@ function h($v): string {
                         </div>
                         <div class="card-body">
                             <div class="card-anio"><?= h($hito['anio']) ?></div>
-                            <div class="card-title"><?= h($hito['titulo']) ?></div>
-                            <div class="card-text"><?= h($hito['texto']) ?></div>
+                            <h3 class="card-title"><?= h($hito['titulo']) ?></h3>
+                            <p class="card-text"><?= h($hito['texto']) ?></p>
                         </div>
-                    </div>
+                    </article>
                 <?php endforeach; ?>
             </div>
         </main>
@@ -692,20 +580,25 @@ function h($v): string {
     </div>
 
     <script>
-        function filtrarEpoca(epoca, btn) {
-            // Actualizar botones activos
-            document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+        // Filtro de tarjetas por época (sin handlers en línea, mejor práctica).
+        document.addEventListener('DOMContentLoaded', () => {
+            const botones = document.querySelectorAll('.filtro-btn');
+            const tarjetas = document.querySelectorAll('.historia-card');
 
-            // Filtrar tarjetas
-            document.querySelectorAll('.historia-card').forEach(card => {
-                if (epoca === 'todos' || card.dataset.epoca === epoca) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+            botones.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const epoca = btn.dataset.epoca;
+
+                    botones.forEach((b) => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    tarjetas.forEach((card) => {
+                        const visible = epoca === 'todos' || card.dataset.epoca === epoca;
+                        card.style.display = visible ? 'flex' : 'none';
+                    });
+                });
             });
-        }
+        });
     </script>
 </body>
 </html>
