@@ -2,8 +2,7 @@
 /**
  * HISTORIA DE BOCA JUNIORS (Diseño en Tarjetas y Épocas)
  * --------------------------------------------------------------
- * Para agregar un hito: sumá una línea nueva en $hitos indicando su época.
- * Épocas disponibles: 'fundacion' (Orígenes), 'amateur' (Amateurismo), 'gloria' (Época Dorada).
+ * Línea de tiempo cronológica completa de 1905 a 2025.
  */
 
 $epocas = [
@@ -18,58 +17,233 @@ $hitos = [
         'epoca' => 'fundacion',
         'anio' => '1905',
         'titulo' => 'Nace una pasión',
-        'texto' => 'El 3 de abril de 1905, un grupo de jóvenes del barrio de La Boca, entre ellos Esteban Baglietto, Alfredo Scarpatti, Santiago Sana y los hermanos Teodoro y Juan Antonio Farenga, fundó el club en la Plaza Solís.',
+        'texto' => 'El 3 de abril de 1905, un grupo de jóvenes del barrio de La Boca (Esteban Baglietto, Alfredo Scarpatti, Santiago Sana y los hermanos Farenga) fundó el club en la Plaza Solís.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'fundacion',
+        'anio' => '1910',
+        'titulo' => 'Los colores del alma',
+        'texto' => 'Tras usar camisetas celestes y negras con tiras blancas, se adoptaron definitivamente los colores azul y amarillo inspirados en la bandera del primer barco sueco ingresado al puerto.',
         'foto' => ''
     ],
     [
         'epoca' => 'amateur',
         'anio' => '1913',
         'titulo' => 'El salto a Primera',
-        'texto' => 'Boca llegó a la máxima categoría del fútbol argentino y desde entonces nunca más se fue. Ese camino sin descensos es parte fundamental de su identidad.',
+        'texto' => 'Boca llegó a la máxima categoría del fútbol argentino y desde entonces se mantiene ininterrumpidamente, siendo el único equipo que nunca descendió.',
         'foto' => ''
     ],
     [
         'epoca' => 'amateur',
         'anio' => '1919',
-        'titulo' => 'El primer título',
-        'texto' => 'El club levantó su primer campeonato de Primera División. Fue el puntapié inicial de una colección inmensa de conquistas locales.',
+        'titulo' => 'El primer título oficial',
+        'texto' => 'El club se consagró campeón invicto del torneo de Primera División de la Asociación Argentina de Football, iniciando su rica historia de conquistas.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'amateur',
+        'anio' => '1920',
+        'titulo' => 'Bicampeonato y consolidación',
+        'texto' => 'Boca revalidó su poderío consagrándose bicampeón del fútbol argentino de manera consecutiva, afianzándose en la máxima categoría.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'amateur',
+        'anio' => '1923',
+        'titulo' => 'Nuevas estrellas locales',
+        'texto' => 'El xeneize sumó un nuevo campeonato de Primera División en una época de crecimiento exponencial de socios y popularidad barrial.',
         'foto' => ''
     ],
     [
         'epoca' => 'amateur',
         'anio' => '1925',
         'titulo' => 'La histórica gira europea',
-        'texto' => 'Boca cruzó el océano para jugar por Europa y demostró su nivel futbolístico a nivel internacional, ganándose el cariño y respeto en el viejo continente.',
+        'texto' => 'Boca realizó una inolvidable gira por Europa jugando 19 partidos y ganando 15, bautizando a su parcialidad para siempre como "La 12" (el jugador número doce).',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'amateur',
+        'anio' => '1926',
+        'titulo' => 'Campeón invicto de nuevo',
+        'texto' => 'Otro año brillante para la institución, quedándose con el campeonato de la Asociación Amateurs de Football sin conocer la derrota.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'amateur',
+        'anio' => '1931',
+        'titulo' => 'Primer campeón profesional',
+        'texto' => 'Boca se consagró como el primer campeón de la era profesional del fútbol argentino bajo la conducción técnica de Mario Fortunato y una delantera letal.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1934',
+        'titulo' => 'Campeón de la Liga Argentina',
+        'texto' => 'Consolidado ya el profesionalismo, el equipo sumó un nuevo título oficial brillando en las canchas de todo el país con figuras históricas.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1935',
+        'titulo' => 'Bicampeonato profesional',
+        'texto' => 'Boca obtuvo el título de Primera División repitiendo la gloria y demostrando la supremacía absoluta en los primeros años del profesionalismo.',
         'foto' => ''
     ],
     [
         'epoca' => 'gloria',
         'anio' => '1940',
         'titulo' => 'Inauguración de La Bombonera',
-        'texto' => 'El 25 de mayo de 1940 se inauguró el mítico estadio de Brandsen. Su diseño único y la cercanía de la hinchada crearon una atmósfera inigualable.',
+        'texto' => 'El 25 de mayo de 1940 se inauguró el mítico estadio Alberto J. Armando (La Bombonera), un templo mundial del fútbol reconocido por su acústica y cercanía.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1943',
+        'titulo' => 'El bicampeonato de los 40',
+        'texto' => 'Con una delantera temible y un juego vistoso, Boca se quedó con los campeonatos de Primera División de 1943 y repitió la corona en 1944.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1954',
+        'titulo' => 'Fin de la sequía local',
+        'texto' => 'Boca rompió una racha de diez años sin títulos locales coronándose campeón de Primera División con figuras estelares como José Borello y el arquero Eladio Musimessi.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1962',
+        'titulo' => 'El penal de Antonio Roma',
+        'texto' => 'Una consagración inolvidable que quedó en la historia gracias al histórico penal atajado por Antonio Roma a Delem en la última fecha frente a River.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1965',
+        'titulo' => 'Campeón con sello propio',
+        'texto' => 'Boca se consagró campeón del torneo de Primera División de la mano de Aristegui, Rojas y un plantel plagado de entrega y mística.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1969',
+        'titulo' => 'El Nacional en Núñez',
+        'texto' => 'Con Alfredo Di Stéfano como DT, Boca dio la vuelta olímpica en la cancha de River empatando 2-2 y se consagró campeón del Torneo Nacional.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1970',
+        'titulo' => 'Metropolitano inolvidable',
+        'texto' => 'Boca alzó el título del Torneo Nacional tras vencer a Rosario Central en una sufrida y recordada final disputada en la cancha de River.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1976',
+        'titulo' => 'El doblete de la mano del Toto Lorenzo',
+        'texto' => 'Con Juan Carlos Lorenzo como DT, el club conquistó tanto el Torneo Metropolitano como el Torneo Nacional en un año de gloria absoluta.',
         'foto' => ''
     ],
     [
         'epoca' => 'gloria',
         'anio' => '1977',
-        'titulo' => 'Primera Copa Libertadores',
-        'texto' => 'Boca conquistó América por primera vez y coronó un año inolvidable ganando también la Copa Intercontinental frente al Borussia Mönchengladbach.',
+        'titulo' => 'Primera Copa Libertadores y del Mundo',
+        'texto' => 'Boca conquistó su primera Copa Libertadores venciendo a Cruzeiro y cerró el año ganando la Copa Intercontinental al Borussia Mönchengladbach.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1978',
+        'titulo' => 'Bicampeón de América',
+        'texto' => 'El equipo del Toto Lorenzo ratificó su jerarquía internacional obteniendo la Copa Libertadores por segunda vez consecutiva ante el Deportivo Cali.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1981',
+        'titulo' => 'Maradona y el Metropolitano',
+        'texto' => 'Con Diego Armando Maradona como máxima figura y estandarte, el Xeneize se consagró campeón del Torneo Metropolitano en una campaña inolvidable.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1992',
+        'titulo' => 'El Apertura con Tabárez',
+        'texto' => 'Tras más de una década sin títulos locales de liga, el equipo dirigido por Oscar Washington Tabárez se consagró campeón del Torneo Apertura.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '1998',
+        'titulo' => 'Arranca la era dorada de Bianchi',
+        'texto' => 'Boca se consagró campeón invicto del Torneo Apertura 1998, iniciando una de las etapas más ganadoras y legendarias de la historia del club.',
         'foto' => ''
     ],
     [
         'epoca' => 'gloria',
         'anio' => '2000',
-        'titulo' => 'La cumbre mundial',
-        'texto' => 'De la mano de Carlos Bianchi, Boca ganó la Copa Libertadores y venció al Real Madrid en Tokio para levantar la segunda Intercontinental de su historia.',
+        'titulo' => 'La cima del mundo con Bianchi',
+        'texto' => 'Boca ganó la Copa Libertadores y venció al Real Madrid en Tokio para levantar la Intercontinental, con actuaciones estelares de Riquelme y Palermo.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '2001',
+        'titulo' => 'Bicampeón de América',
+        'texto' => 'El equipo de Carlos Bianchi revalidó su corona continental ganando la Copa Libertadores de América de forma consecutiva frente al Cruz Azul.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '2003',
+        'titulo' => 'Triplete histórico y Milán a sus pies',
+        'texto' => 'Boca conquistó otra Copa Libertadores y vapuleó al AC Milan en Japón por penales para alzar su tercera Copa Intercontinental con un inspirado Riquelme.',
         'foto' => ''
     ],
     [
         'epoca' => 'gloria',
         'anio' => '2007',
-        'titulo' => 'La sexta de América',
-        'texto' => 'Con una actuación consagratoria de Juan Román Riquelme, Boca alzó su sexta Copa Libertadores en una final inolvidable ante Gremio.',
+        'titulo' => 'La sexta Copa Libertadores',
+        'texto' => 'Con un nivel superlativo de Juan Román Riquelme a lo largo de todo el certamen, Boca alzó su sexta Copa Libertadores tras superar a Gremio en la final.',
         'foto' => ''
     ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '2011',
+        'titulo' => 'Invicto y campeón con Falcioni',
+        'texto' => 'Boca se consagró campeón del Torneo Apertura de manera invicta y con una solidez defensiva impresionante bajo la conducción de Julio César Falcioni.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '2015',
+        'titulo' => 'Campeonato y Copa Argentina',
+        'texto' => 'El equipo dirigido por Rodolfo Arruabarrena logró un doblete fundamental quedándose con el Campeonato de Primera División y la Copa Argentina.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '2020',
+        'titulo' => 'Superliga sobre la hora',
+        'texto' => 'Con Miguel Ángel Russo como DT y un gol agónico de Carlos Tevez ante Gimnasia, Boca le arrebató el campeonato a su clásico rival en la última fecha.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '2022',
+        'titulo' => 'Nuevo título de Liga Profesional',
+        'texto' => 'Boca se consagró campeón de la Liga Profesional tras una emocionante definición en La Bombonera en una definición para el infarto.',
+        'foto' => ''
+    ],
+    [
+        'epoca' => 'gloria',
+        'anio' => '2025',
+        'titulo' => '120 Años de Historia',
+        'texto' => 'Boca celebró su 120 aniversario consolidado como el club más popular de la Argentina y uno de los máximos referentes del fútbol mundial.',
+        'foto' => ''
+    ]
 ];
 
 $datos = [
@@ -103,7 +277,6 @@ function h($v): string {
             --text-muted: #9ca3af;
             --border: rgba(255, 255, 255, 0.08);
             --shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.7);
-            --oro: #f5b301;
         }
 
         * {
@@ -201,17 +374,6 @@ function h($v): string {
             height: 1px;
             background: var(--border);
             margin: 12px 0;
-        }
-
-        .badge-soon {
-            margin-left: auto;
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--accent);
-            font-size: 0.68rem;
-            font-weight: 700;
-            padding: 2px 7px;
-            border-radius: 6px;
-            text-transform: uppercase;
         }
 
         .sidebar-footer {
@@ -441,13 +603,13 @@ function h($v): string {
             <div class="menu-label">Menú Principal</div>
             <a href="index.php" class="sidebar-link"><span class="icon">🏠</span> Inicio</a>
             <a href="podio.php" class="sidebar-link"><span class="icon">🏆</span> Podio de Jugadores</a>
-            <a href="estadisticas.php" class="sidebar-link active"><span class="icon">📊</span> Estadísticas</a>
+            <a href="estadisticas.php" class="sidebar-link"><span class="icon">📊</span> Estadísticas</a>
             <a href="posiciones.php" class="sidebar-link"><span class="icon">📌</span> Posiciones Actuales</a>
             <a href="plantel.php" class="sidebar-link"><span class="icon">👥</span> Plantel Actual</a>
             <div class="sidebar-divider"></div>
             <div class="menu-label">Archivo Histórico</div>
-            <a href="#" class="sidebar-link" style="opacity: 0.6; cursor: default;">
-                <span class="icon">📜</span> Sección de Historia <span class="badge-soon">Pronto</span>
+            <a href="#" class="sidebar-link active" style="cursor: default;">
+                <span class="icon">📜</span> Sección de Historia
             </a>
         </div>
         <div class="sidebar-footer">
