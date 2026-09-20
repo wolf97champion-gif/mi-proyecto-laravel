@@ -451,8 +451,8 @@
                 <span class="icon">📊</span> Estadísticas
             </a>
 
-            <a href="posiciones.php" class="sidebar-link">
-                <span class="icon">📌</span> Posiciones Actuales
+            <a href="foro.php" class="sidebar-link">
+               <span class="icon">💬</span> Foro y Debates
             </a>
 
             <a href="plantel.php" class="sidebar-link">

@@ -604,7 +604,7 @@ function h($v): string {
             <a href="index.php" class="sidebar-link"><span class="icon">🏠</span> Inicio</a>
             <a href="podio.php" class="sidebar-link"><span class="icon">🏆</span> Podio de Jugadores</a>
             <a href="estadisticas.php" class="sidebar-link"><span class="icon">📊</span> Estadísticas</a>
-            <a href="posiciones.php" class="sidebar-link"><span class="icon">📌</span> Posiciones Actuales</a>
+            <a href="foro.php" class="sidebar-link"><span class="icon">💬</span> Foro y Debates</a>
             <a href="plantel.php" class="sidebar-link"><span class="icon">👥</span> Plantel Actual</a>
             <div class="sidebar-divider"></div>
             <div class="menu-label">Archivo Histórico</div>
