@@ -468,12 +468,24 @@ function h($v): string {
             gap: 15px;
         }
 
+        /* --- CONEXIÓN ESTADÍSTICAS --- */
         .dato {
             background: var(--bg-surface);
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 20px;
             text-align: center;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.2s ease;
+        }
+
+        .dato:hover {
+            transform: translateY(-3px);
+            background: var(--bg-surface-hover);
+            border-color: rgba(245, 158, 11, 0.4);
+            box-shadow: 0 8px 25px -8px rgba(245, 158, 11, 0.2);
         }
 
         .dato strong {
@@ -620,7 +632,7 @@ function h($v): string {
             </div>
         </div>
     </aside>
-    
+
     <!-- CONTENIDO -->
     <div class="main-wrapper">
         <header class="top-header">
@@ -636,10 +648,11 @@ function h($v): string {
 
             <div class="datos">
                 <?php foreach ($datos as [$numero, $texto]): ?>
-                    <div class="dato">
+                    <!-- Conectado dinámicamente con estadisticas.php -->
+                    <a href="estadisticas.php" class="dato">
                         <strong><?= h($numero) ?></strong>
                         <span><?= h($texto) ?></span>
-                    </div>
+                    </a>
                 <?php endforeach; ?>
             </div>
 
