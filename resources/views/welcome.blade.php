@@ -503,8 +503,8 @@
                     <div class="panel-title">📺 Último Análisis en Directo</div>
                     <p>Reviví el programa más reciente directamente haciendo clic en el reproductor.</p>
                     
-                    <a href="https://www.youtube.com/watch?v=It-xG6qLVmM" target="_blank" class="video-card-preview">
-                        <img src="https://img.youtube.com/vi/It-xG6qLVmM/maxresdefault.jpg" alt="Último video del canal">
+                    <a href="https://www.youtube.com/watch?v=SGnprjuOyWM" target="_blank" class="video-card-preview">
+                        <img src="https://img.youtube.com/vi/SGnprjuOyWM/maxresdefault.jpg" alt="Último video del canal">
                         <div class="play-overlay-btn">▶</div>
                     </a>
 
