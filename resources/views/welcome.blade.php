@@ -410,6 +410,127 @@
         }
         .btn-main:hover { background: #fbbf24; transform: translateY(-2px); }
 
+        /* --- APOYO AL CANAL (MERCADO PAGO) --- */
+        .support-section {
+            background: linear-gradient(135deg, var(--bg-surface) 0%, #101a2e 100%);
+            border: 1px solid rgba(0, 156, 222, 0.35);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            width: 100%;
+        }
+
+        .support-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 6px;
+        }
+
+        .support-header .mp-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #009ee3;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .support-header h2 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .support-header span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .support-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 12px 0 22px;
+            max-width: 640px;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
+
+        .pago-item {
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .pago-item .pago-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .pago-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .pago-value {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: #fff;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            flex-shrink: 0;
+            background: rgba(0, 156, 222, 0.15);
+            border: 1px solid rgba(0, 156, 222, 0.4);
+            color: #4dc4ff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 7px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+
+        .copy-btn:hover {
+            background: #009ee3;
+            color: #fff;
+            border-color: #009ee3;
+        }
+
+        .copy-btn.copied {
+            background: #16a34a;
+            border-color: #16a34a;
+            color: #fff;
+        }
+
+        .pago-item.holder {
+            grid-column: 1 / -1;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+        }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -425,6 +546,7 @@
             body { flex-direction: column; }
             .sidebar { position: relative; width: 100%; height: auto; }
             .main-wrapper { margin-left: 0; width: 100%; }
+            .pago-item.holder { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -472,8 +594,8 @@
         <div class="sidebar-footer">
             <div class="menu-label" style="padding-left:0; margin-bottom: 2px;">Redes Oficiales</div>
             <div class="sidebar-socials">
-                <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="social-pill youtube">YouTube</a>
-                <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="social-pill tiktok">TikTok</a>
+                <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" rel="noopener" class="social-pill youtube">YouTube</a>
+                <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" rel="noopener" class="social-pill tiktok">TikTok</a>
             </div>
         </div>
     </aside>
@@ -503,13 +625,13 @@
                     <div class="panel-title">📺 Último Análisis en Directo</div>
                     <p>Reviví el programa más reciente directamente haciendo clic en el reproductor.</p>
                     
-                    <a href="https://www.youtube.com/watch?v=SGnprjuOyWM" target="_blank" class="video-card-preview">
+                    <a href="https://www.youtube.com/watch?v=SGnprjuOyWM" target="_blank" rel="noopener" class="video-card-preview">
                         <img src="https://img.youtube.com/vi/SGnprjuOyWM/maxresdefault.jpg" alt="Último video del canal">
                         <div class="play-overlay-btn">▶</div>
                     </a>
 
                     <div>
-                        <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="card-link-text">Ver más transmisiones en YouTube &rarr;</a>
+                        <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" rel="noopener" class="card-link-text">Ver más transmisiones en YouTube &rarr;</a>
                     </div>
                 </div>
 
@@ -525,10 +647,45 @@
                         <p>¡Viví la pasión de Boca con toda la comunidad!</p>
                     </div>
 
-                    <a href="https://whatsapp.com/channel/0029Vb7Aq78JJhzXb63HwD09" target="_blank" class="btn-main">Unirse al Grupo de WhatsApp &rarr;</a>
+                    <a href="https://whatsapp.com/channel/0029Vb7Aq78JJhzXb63HwD09" target="_blank" rel="noopener" class="btn-main">Unirse al Grupo de WhatsApp &rarr;</a>
                 </div>
 
             </div>
+
+            <!-- APOYO AL CANAL / MERCADO PAGO -->
+            <section class="support-section">
+                <div class="support-header">
+                    <div class="mp-logo">💳</div>
+                    <div>
+                        <h2>Apoyá al Canal</h2>
+                        <span>Mercado Pago • Tu aporte hace crecer la comunidad</span>
+                    </div>
+                </div>
+                <p class="support-desc">Si te gusta el contenido y querés colaborar para seguir mejorando las transmisiones, podés hacerlo con tu billetera de Mercado Pago usando el alias o el CVU. ¡Muchas gracias por el aguante!</p>
+
+                <div class="support-grid">
+                    <div class="pago-item">
+                        <span class="pago-label">Alias</span>
+                        <div class="pago-row">
+                            <span class="pago-value" id="aliasValue">michael.ok.mp</span>
+                            <button type="button" class="copy-btn" data-copy-target="aliasValue">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="pago-item">
+                        <span class="pago-label">CVU</span>
+                        <div class="pago-row">
+                            <span class="pago-value" id="cvuValue">0000003100069487314033</span>
+                            <button type="button" class="copy-btn" data-copy-target="cvuValue">Copiar</button>
+                        </div>
+                    </div>
+
+                    <div class="pago-item holder">
+                        <span class="pago-label" style="margin-bottom:0;">Titular</span>
+                        <span class="pago-value">Michael Novoa y Gonzalez</span>
+                    </div>
+                </div>
+            </section>
 
         </main>
 
@@ -538,5 +695,37 @@
         </footer>
     </div>
 
+    <script>
+        // Copiar alias / CVU al portapapeles (sin handlers en línea).
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.copy-btn').forEach((btn) => {
+                btn.addEventListener('click', async () => {
+                    const target = document.getElementById(btn.dataset.copyTarget);
+                    if (!target) return;
+                    const texto = target.textContent.trim();
+
+                    try {
+                        await navigator.clipboard.writeText(texto);
+                    } catch (e) {
+                        // Respaldo para navegadores sin API de portapapeles.
+                        const tmp = document.createElement('textarea');
+                        tmp.value = texto;
+                        document.body.appendChild(tmp);
+                        tmp.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tmp);
+                    }
+
+                    const original = btn.textContent;
+                    btn.textContent = '¡Copiado!';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.textContent = original;
+                        btn.classList.remove('copied');
+                    }, 1800);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
