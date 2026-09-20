@@ -459,10 +459,57 @@
             max-width: 640px;
         }
 
+        .support-body {
+            display: flex;
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .support-data {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
         .support-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 15px;
+        }
+
+        /* QR de pago */
+        .support-qr {
+            flex: 0 0 220px;
+            background: #fff;
+            border-radius: 14px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 8px 25px -10px rgba(0,0,0,0.6);
+        }
+
+        .support-qr img {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+            display: block;
+        }
+
+        .support-qr .qr-caption {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #07090e;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        @media (max-width: 900px) {
+            .support-body { flex-direction: column; }
+            .support-qr { flex: 1 1 auto; align-self: center; max-width: 260px; }
         }
 
         .pago-item {
@@ -663,26 +710,35 @@
                 </div>
                 <p class="support-desc">Si te gusta el contenido y querés colaborar para seguir mejorando las transmisiones, podés hacerlo con tu billetera de Mercado Pago usando el alias o el CVU. ¡Muchas gracias por el aguante!</p>
 
-                <div class="support-grid">
-                    <div class="pago-item">
-                        <span class="pago-label">Alias</span>
-                        <div class="pago-row">
-                            <span class="pago-value" id="aliasValue">michael.ok.mp</span>
-                            <button type="button" class="copy-btn" data-copy-target="aliasValue">Copiar</button>
+                <div class="support-body">
+                    <div class="support-data">
+                        <div class="support-grid">
+                            <div class="pago-item">
+                                <span class="pago-label">Alias</span>
+                                <div class="pago-row">
+                                    <span class="pago-value" id="aliasValue">michael.ok.mp</span>
+                                    <button type="button" class="copy-btn" data-copy-target="aliasValue">Copiar</button>
+                                </div>
+                            </div>
+
+                            <div class="pago-item">
+                                <span class="pago-label">CVU</span>
+                                <div class="pago-row">
+                                    <span class="pago-value" id="cvuValue">0000003100069487314033</span>
+                                    <button type="button" class="copy-btn" data-copy-target="cvuValue">Copiar</button>
+                                </div>
+                            </div>
+
+                            <div class="pago-item holder">
+                                <span class="pago-label" style="margin-bottom:0;">Titular</span>
+                                <span class="pago-value">Michael Novoa y Gonzalez</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="pago-item">
-                        <span class="pago-label">CVU</span>
-                        <div class="pago-row">
-                            <span class="pago-value" id="cvuValue">0000003100069487314033</span>
-                            <button type="button" class="copy-btn" data-copy-target="cvuValue">Copiar</button>
-                        </div>
-                    </div>
-
-                    <div class="pago-item holder">
-                        <span class="pago-label" style="margin-bottom:0;">Titular</span>
-                        <span class="pago-value">Michael Novoa y Gonzalez</span>
+                    <div class="support-qr">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAIAAAAHjs1qAAAD+ElEQVR4nO3dMa7VMBRAQT6iQDTsf5k0iC60VC5I7neSM9O/pyg5cnNl++M4ji/Q8HX3A8DnkTshcidE7oTInRC5EyJ3QuROiNwJkTshcidE7oTInRC5EyJ3QuROiNwJkTshcifk25kff//x86rnuIk/v3/992/Xb+PMP5/hG/3L6k6I3AmROyFyJ0TuhMidELkTIndC5E7Iqanq2q454tquKeM9Z661b2R1J0TuhMidELkTIndC5E6I3AmROyFyJ2Rwqro2NzmbmxTOTUbvOXN94jdas7oTIndC5E6I3AmROyFyJ0TuhMidELkTsm2q+j5zM8h7zlyfyOpOiNwJkTshcidE7oTInRC5EyJ3QuROiKnqZdbTzTOT0ffdjbqL1Z0QuRMid0LkTojcCZE7IXInRO6EyJ2QbVPV9+2wnJubunX1KlZ3QuROiNwJkTshcidE7oTInRC5EyJ3QganqrUdlrv2qs7d5/o+VndC5E6I3AmROyFyJ0TuhMidELkTIndCPo7j2P0Mj3FmBvm+fZ9PZHUnRO6EyJ0QuRMid0LkTojcCZE7IXIn5NRU9X13he6afdZ2o+56z1Z3QuROiNwJkTshcidE7oTInRC5EyJ3Qgb3qs7t7Nw1g9z1z7XJ6NxXsLoTIndC5E6I3AmROyFyJ0TuhMidELkTMniv6q4dlrumubvMPfOutzE3r7W6EyJ3QuROiNwJkTshcidE7oTInRC5EzI4VV3btXdzbmK3awb5vl2wc6zuhMidELkTIndC5E6I3AmROyFyJ0TuhJyaqj7xvNwn7t1cmzstedf3dQIwXEDuhMidELkTIndC5E6I3AmROyFyJ2TwXtX3eeLcdM4Tp7lWd0LkTojcCZE7IXInRO6EyJ0QuRMid0JOTVXfd37s3PnA93xX99xP7F5VuIDcCZE7IXInRO6EyJ0QuRMid0LkTsjgvapzs7Ezzkw3n3h68K6vcM8pstWdELkTIndC5E6I3AmROyFyJ0TuhMidkMGp6tr75ohzdu0oXXOvKtya3AmROyFyJ0TuhMidELkTIndC5E7Itqnq+9zzzNu1ud23c789w+pOiNwJkTshcidE7oTInRC5EyJ3QuROiKnqZXadLXzGrntkTVVhnNwJkTshcidE7oTInRC5EyJ3QuROyLap6hPP6Z27G/WJb+OeN6euWd0JkTshcidE7oTInRC5EyJ3QuROiNwJGZyqPnHqtjY3N53b2Tn3zPe87XXN6k6I3AmROyFyJ0TuhMidELkTIndC5E7Ix3Ecu58BPonVnRC5EyJ3QuROiNwJkTshcidE7oTInRC5EyJ3QuROiNwJkTshcidE7oTInRC5EyJ3Qv4C01b+GsoFyw4AAAAASUVORK5CYII=" alt="Codigo QR para donar por Mercado Pago (alias michael.ok.mp)">
+                        <div class="qr-caption">📲 Escaneá para donar</div>
                     </div>
                 </div>
             </section>
