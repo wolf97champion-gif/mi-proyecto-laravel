@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 require __DIR__ . '/tracker.php';
 
@@ -285,6 +284,16 @@ function esActivo(string $archivo): bool {
         .social-pill.youtube:hover { background: #cc0000; border-color: #cc0000; color: #fff; }
         .social-pill.tiktok:hover { background: #ff0050; border-color: #ff0050; color: #fff; }
 
+        /* --- CAJA MERCADO PAGO EN EL NAVBAR --- */
+        .mp-box { margin-top: 14px; background: linear-gradient(135deg, rgba(0,158,227,0.18), rgba(245,158,11,0.10)); border: 1px solid rgba(0,158,227,0.35); border-radius: 12px; padding: 12px; }
+        .mp-box .mp-title { font-size: 0.72rem; font-weight: 800; color: #35c2ff; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+        .mp-row { font-size: 0.74rem; color: var(--text-muted); margin-bottom: 4px; }
+        .mp-row b { color: var(--text-main); font-weight: 700; }
+        .mp-alias { display: flex; align-items: center; justify-content: space-between; gap: 8px; background: var(--bg-base); border: 1px solid var(--border); border-radius: 8px; padding: 7px 10px; margin-top: 6px; }
+        .mp-alias code { color: var(--accent); font-weight: 800; font-size: 0.82rem; }
+        .mp-copy { background: var(--accent); color: #000; border: none; border-radius: 6px; padding: 4px 9px; font-size: 0.68rem; font-weight: 800; cursor: pointer; }
+        .mp-copy:hover { background: #fbbf24; }
+
         /* --- CONTENEDOR PRINCIPAL --- */
         .main-wrapper {
             margin-left: 270px;
@@ -519,6 +528,16 @@ function esActivo(string $archivo): bool {
                 <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" rel="noopener" class="social-pill youtube">YouTube</a>
                 <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" rel="noopener" class="social-pill tiktok">TikTok</a>
             </div>
+
+            <!-- CAJA MERCADO PAGO -->
+            <div class="mp-box">
+                <div class="mp-title">💳 APOYÁ AL CANAL · MERCADO PAGO</div>
+                <div class="mp-row">Titular: <b>Michael Novoa y Gonzalez</b></div>
+                <div class="mp-alias">
+                    <code id="mpAlias">michael.ok.mp</code>
+                    <button class="mp-copy" type="button" onclick="copiarAlias()">Copiar</button>
+                </div>
+            </div>
         </div>
     </aside>
 
@@ -583,6 +602,14 @@ function esActivo(string $archivo): bool {
 
     <script>
         // Filtro de tarjetas por época (sin handlers en línea, mejor práctica).
+        function copiarAlias(){
+            const alias = document.getElementById('mpAlias').textContent.trim();
+            navigator.clipboard?.writeText(alias).then(() => {
+                const b = document.querySelector('.mp-copy'); const o = b.textContent; b.textContent = '¡Copiado!';
+                setTimeout(() => b.textContent = o, 1500);
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const botones = document.querySelectorAll('.filtro-btn');
             const tarjetas = document.querySelectorAll('.historia-card');
