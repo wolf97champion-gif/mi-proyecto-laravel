@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/tracker.php'; ?>
 <?php
 
 $actualizado = '20/09/2026';

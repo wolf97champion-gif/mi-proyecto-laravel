@@ -1,3 +1,4 @@
+<?php require public_path('tracker.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -785,6 +786,6 @@
             });
         });
     </script>
-    
+
 </body>
 </html>

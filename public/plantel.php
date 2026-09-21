@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/tracker.php'; ?>
 <?php
 /*
  * PLANTEL ACTUAL

@@ -1,3 +1,4 @@
+<?php require __DIR__ . '/tracker.php'; ?>
 <?php
 /**
  * PODIO DE GOLEADORES DE BOCA JUNIORS
