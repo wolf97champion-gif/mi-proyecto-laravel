@@ -600,47 +600,44 @@
         }
     </style>
 </head>
+
 <body>
+   <div class="sidebar-menu">
+    <div class="menu-label">Menú Principal</div>
 
-    <!-- BARRA LATERAL IZQUIERDA FIJA -->
-    <aside class="sidebar">
-        <a href="#" class="sidebar-brand">
-            ⚡ <span>PUNTO DE ENCUENTRO</span>
-        </a>
+    <a href="index.php" class="sidebar-link active">
+        <span class="icon">🏠</span> Inicio
+    </a>
 
-        <div class="sidebar-menu">
-            <div class="menu-label">Menú Principal</div>
-            
-            <a href="index.php" class="sidebar-link active">
-                <span class="icon">🏠</span> Inicio
-            </a>
+    <a href="podio.php" class="sidebar-link">
+        <span class="icon">🏆</span> Podio de Jugadores
+    </a>
 
-            <a href="podio.php" class="sidebar-link">
-                <span class="icon">🏆</span> Podio de Jugadores
-            </a>
+    <a href="estadisticas.php" class="sidebar-link">
+        <span class="icon">📊</span> Estadísticas
+    </a>
 
-            <a href="estadisticas.php" class="sidebar-link">
-                <span class="icon">📊</span> Estadísticas
-            </a>
+    <a href="foro.php" class="sidebar-link">
+        <span class="icon">💬</span> Foro y Debates
+    </a>
 
-            <a href="foro.php" class="sidebar-link">
-               <span class="icon">💬</span> Foro y Debates
-            </a>
+    <a href="plantel.php" class="sidebar-link">
+        <span class="icon">👥</span> Plantel Actual
+    </a>
 
-            <a href="plantel.php" class="sidebar-link">
-                <span class="icon">👥</span> Plantel Actual
-            </a>
+    <a href="noticias.php" class="sidebar-link">
+        <span class="icon">📰</span> Noticias
+    </a>
 
-            <div class="sidebar-divider"></div>
+    <div class="sidebar-divider"></div>
 
-            <div class="menu-label">Archivo Histórico</div>
+    <div class="menu-label">Archivo Histórico</div>
 
-            <a href="#" class="sidebar-link coming-soon">
-                <span class="icon">📜</span> Sección de Historia
-                <span class="badge-soon">Pronto</span>
-            </a>
-        </div>
-
+    <a href="#" class="sidebar-link coming-soon">
+        <span class="icon">📜</span> Sección de Historia
+        <span class="badge-soon">Pronto</span>
+    </a>
+</div>
         <div class="sidebar-footer">
             <div class="menu-label" style="padding-left:0; margin-bottom: 2px;">Redes Oficiales</div>
             <div class="sidebar-socials">

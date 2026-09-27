@@ -201,6 +201,7 @@ require __DIR__ . '/tracker.php';
             <a href="estadisticas.php" class="sidebar-link"><span class="icon">📊</span> Estadísticas</a>
             <a href="foro.php" class="sidebar-link active"><span class="icon">💬</span> Foro y Debates</a>
             <a href="plantel.php" class="sidebar-link"><span class="icon">👥</span> Plantel Actual</a>
+            <a href="noticias.php" class="sidebar-link"><span class="icon">📰</span> Noticias</a>
 
             <div class="sidebar-divider"></div>
             <div class="menu-label">Archivo Histórico</div>
