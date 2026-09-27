@@ -205,8 +205,10 @@
             flex-direction: column;
             gap: 25px;
             width: 100%;
+            max-width: 1200px;   /* tope de ancho, para que no se estire */
+            margin: 0 auto;      /* lo centra en el medio */
             flex: 1;
-        }
+}
 
         /* Hero / Presentación */
         .hero-section {
@@ -602,6 +604,7 @@
 </head>
 
 <body>
+
    <div class="sidebar-menu">
     <div class="menu-label">Menú Principal</div>
 
