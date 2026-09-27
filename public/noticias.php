@@ -207,11 +207,12 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
 </head>
 <body>
     <!-- ================= NAVBAR ================= -->
-    <a href="index.php" class="brand" style="text-decoration:none;">PUNTO DE <span>ENCUENTRO</span></a>
-<div class="brand-sub">La web de la comunidad Xeneize</div>
+    <aside class="sidebar">
+        <a href="index.php" class="brand" style="text-decoration:none;">PUNTO DE <span>ENCUENTRO</span></a>
+        <div class="brand-sub">La web de la comunidad Xeneize</div>
 
-<div class="nav-title">Menú</div>
-<a href="index.php" class="nav-link">🏠 Inicio</a>
+        <div class="nav-title">Menú</div>
+        <a href="index.php" class="nav-link">🏠 Inicio</a>
         <a href="podio.php" class="nav-link">🏆 Podio de Jugadores</a>
         <a href="estadisticas.php" class="nav-link">📊 Estadísticas</a>
         <a href="foro.php" class="nav-link">💬 Foro y Debates</a>
