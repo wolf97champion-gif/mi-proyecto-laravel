@@ -605,7 +605,12 @@
 
 <body>
 
-   <div class="sidebar-menu">
+    <aside class="sidebar">
+        <a href="index.php" class="sidebar-brand">
+            ⚡ <span>PUNTO DE ENCUENTRO</span>
+        </a>
+
+        <div class="sidebar-menu">
     <div class="menu-label">Menú Principal</div>
 
     <a href="index.php" class="sidebar-link active">
