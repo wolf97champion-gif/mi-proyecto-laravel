@@ -7,17 +7,14 @@
  | y las guarda un ratito en cache para que cargue rapido en Render.
  | No hay que cargar nada a mano: se actualiza solo.
  */
-
 // ---- CONFIG ----
 $FEED_URL  = 'https://news.google.com/rss/search?q=%22Boca+Juniors%22&hl=es-419&gl=AR&ceid=AR:es-419';
 $CACHE_MIN = 15; // cada cuantos minutos se refresca
 $MAX_NOTICIAS = 24;
-
 // Carpeta de cache (misma logica que el foro: storage/app/datos)
 $cacheDir  = __DIR__ . '/../storage/app/datos';
 $cacheFile = $cacheDir . '/noticias_boca.xml';
 if (!is_dir($cacheDir)) { @mkdir($cacheDir, 0775, true); }
-
 // ---- TRAER EL FEED (con cache) ----
 function bajarFeed($url) {
     if (function_exists('curl_init')) {
@@ -36,10 +33,8 @@ function bajarFeed($url) {
     $ctx = stream_context_create(['http' => ['timeout' => 12, 'user_agent' => 'Mozilla/5.0']]);
     return @file_get_contents($url, false, $ctx);
 }
-
 $xmlData = null;
 $cacheValido = is_file($cacheFile) && (time() - filemtime($cacheFile) < $CACHE_MIN * 60);
-
 if ($cacheValido) {
     $xmlData = @file_get_contents($cacheFile);
 } else {
@@ -51,7 +46,6 @@ if ($cacheValido) {
         $xmlData = @file_get_contents($cacheFile);
     }
 }
-
 // ---- PARSEAR ----
 $noticias = [];
 if ($xmlData) {
@@ -63,7 +57,7 @@ if ($xmlData) {
             $link   = trim((string)$item->link);
             $fecha  = trim((string)$item->pubDate);
             $fuente = isset($item->source) ? trim((string)$item->source) : '';
-            // El titulo de Google News suele venir como \"Titular - Fuente\"
+            // El titulo de Google News suele venir como "Titular - Fuente"
             if ($fuente === '' && strrpos($titulo, ' - ') !== false) {
                 $fuente = trim(substr($titulo, strrpos($titulo, ' - ') + 3));
                 $titulo = trim(substr($titulo, 0, strrpos($titulo, ' - ')));
@@ -75,7 +69,6 @@ if ($xmlData) {
         }
     }
 }
-
 // ---- FECHA LINDA (hace X horas / dd mmm) ----
 function fechaLinda($pubDate) {
     if (!$pubDate) return '';
@@ -89,7 +82,6 @@ function fechaLinda($pubDate) {
     $meses = ['', 'ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
     return date('j', $ts) . ' ' . $meses[(int)date('n', $ts)];
 }
-
 $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:i');
 ?>
 <!DOCTYPE html>
@@ -113,7 +105,7 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
             --text-muted: #9ca3af;
             --border: rgba(255, 255, 255, 0.08);
             --shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.7);
-            --bg-card: #131824; /* Para tarjetas de noticias */
+            --bg-card: #131824;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
         body { background-color: var(--bg-base); color: var(--text-main); display: flex; min-height: 100vh; overflow-x: hidden; }
@@ -133,7 +125,7 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
         .sidebar-link.coming-soon { opacity: 0.6; cursor: default; }
         .sidebar-link.coming-soon:hover { background: transparent; color: var(--text-main); }
         .badge-soon { margin-left: auto; background: rgba(245, 158, 11, 0.15); color: var(--accent); font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 6px; text-transform: uppercase; }
-        .sidebar-footer { padding-top: 15px; border-top: 1px solid var(--border); }
+        .sidebar-footer { padding-top: 15px; border-top: 1px solid var(--border); margin-top: auto; }
         .sidebar-socials { display: flex; gap: 8px; margin-top: 8px; }
         .social-pill { flex: 1; padding: 8px; border-radius: 8px; font-size: 0.78rem; font-weight: 600; text-align: center; text-decoration: none; background: var(--bg-base); color: var(--text-main); border: 1px solid var(--border); transition: 0.2s; }
         .social-pill.youtube:hover { background: #cc0000; border-color: #cc0000; color: #fff; }
@@ -148,13 +140,13 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
         .mp-alias code { color: var(--accent); font-weight: 800; font-size: 0.82rem; }
         .mp-copy { background: var(--accent); color: #000; border: none; border-radius: 6px; padding: 4px 9px; font-size: 0.68rem; font-weight: 800; cursor: pointer; }
         .mp-copy:hover { background: #fbbf24; }
-
-        /* --- CONTENEDOR PRINCIPAL --- */
+        
+        /* --- CONTENEDOR PRINCIPAL — UNIFICADO --- */
         .main-wrapper { margin-left: 270px; flex: 1; display: flex; flex-direction: column; min-height: 100vh; width: calc(100% - 270px); }
         .top-header { padding: 20px 40px; border-bottom: 1px solid var(--border); background: rgba(7, 9, 14, 0.85); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 999; }
         .top-header h2 { font-size: 1.15rem; font-weight: 700; color: #fff; }
         .content-container { padding: 35px 40px; display: flex; flex-direction: column; gap: 25px; width: 100%; flex: 1; }
-
+        
         /* --- ESTILOS EXCLUSIVOS DE NOTICIAS --- */
         .page-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
         .page-title { font-size: 1.9rem; font-weight: 800; }
@@ -185,7 +177,7 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
         
         .vacio { background: var(--bg-card); border: 1px dashed var(--border); border-radius: 14px; padding: 40px; text-align: center; color: var(--text-muted); }
         .foot-note { margin-top: 26px; font-size: 0.75rem; color: var(--text-muted); line-height: 1.6; }
-
+        
         /* --- RESPONSIVE --- */
         @media (max-width: 850px) {
             body { flex-direction: column; }
@@ -193,8 +185,7 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
             .main-wrapper { margin-left: 0; width: 100%; }
             .top-header, .content-container { padding-left: 20px; padding-right: 20px; }
         }
-</style>
-
+    </style>
 </head>
 <body>
     <!-- ================= NAVBAR ================= -->
@@ -202,10 +193,8 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
     <a href="index.php" class="sidebar-brand">
         ⚡ PUNTO DE <span>ENCUENTRO</span>
     </a>
-
     <nav class="sidebar-menu">
         <div class="menu-label">Menú Principal</div>
-
         <a href="index.php" class="sidebar-link">
             <span class="icon">🏠</span> Inicio
         </a>
@@ -224,28 +213,24 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
         <a href="noticias.php" class="sidebar-link active">
             <span class="icon">📰</span> Noticias
         </a>
-
         <div class="sidebar-divider"></div>
-
         <div class="menu-label">Archivo Histórico</div>
         <div class="sidebar-link coming-soon">
             <span class="icon">📚</span> Sección de Historia
             <span class="badge-soon">PRONTO</span>
         </div>
-
         <div class="sidebar-footer">
             <div class="sidebar-socials">
                 <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" class="social-pill youtube">YouTube</a>
                 <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="social-pill tiktok">TikTok</a>
             </div>
-
             <!-- CAJA MERCADO PAGO (igual al resto) -->
             <div class="mp-box">
                 <div class="mp-title">💙 Apoyar el proyecto</div>
                 <div class="mp-row">Mercado Pago</div>
-                <div class="mp-alias">
+                <div class="mp-alias" id="mpAlias">
                     <code>tu-alias-aqui</code>
-                    <button class="mp-copy">Copiar</button>
+                    <button class="mp-copy" onclick="copiarAlias()">Copiar</button>
                 </div>
             </div>
         </div>
@@ -253,46 +238,46 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
 </aside>
 
     <!-- ================= CONTENIDO ================= -->
-    <main class="main">
-        <div class="page-head">
-            <div>
-                <div class="page-title">📰 Noticias de <span class="em">Boca</span></div>
-            </div>
+    <div class="main-wrapper">
+        <div class="top-header">
+            <h2>📰 Noticias de Boca</h2>
             <div class="live-pill"><span class="live-dot"></span> EN VIVO · se actualiza solo</div>
         </div>
-        <p class="page-sub">Lo último del mundo Xeneize, todo junto en un solo lugar. Última actualización: <b><?php echo $ultimaAct; ?></b> hs.</p>
-
-        <?php if (count($noticias) > 0): ?>
-        <div class="grid">
-            <?php foreach ($noticias as $n): ?>
-            <article class="card">
-                <?php if ($n['fuente']): ?><div class="card-fuente"><?php echo htmlspecialchars($n['fuente']); ?></div><?php endif; ?>
-                <div class="card-titulo"><?php echo htmlspecialchars($n['titulo']); ?></div>
-                <div class="card-foot">
-                    <span class="card-fecha">🕒 <?php echo htmlspecialchars(fechaLinda($n['fecha'])); ?></span>
-                    <a class="card-link" href="<?php echo htmlspecialchars($n['link']); ?>" target="_blank" rel="noopener">Leer nota →</a>
-                </div>
-            </article>
-            <?php endforeach; ?>
+        <div class="content-container">
+            <p class="page-sub">Lo último del mundo Xeneize, todo junto en un solo lugar. Última actualización: <b><?php echo $ultimaAct; ?></b> hs.</p>
+            <?php if (count($noticias) > 0): ?>
+            <div class="grid">
+                <?php foreach ($noticias as $n): ?>
+                <article class="card">
+                    <?php if ($n['fuente']): ?><div class="card-fuente"><?php echo htmlspecialchars($n['fuente']); ?></div><?php endif; ?>
+                    <div class="card-titulo"><?php echo htmlspecialchars($n['titulo']); ?></div>
+                    <div class="card-foot">
+                        <span class="card-fecha">🕒 <?php echo htmlspecialchars(fechaLinda($n['fecha'])); ?></span>
+                        <a class="card-link" href="<?php echo htmlspecialchars($n['link']); ?>" target="_blank" rel="noopener">Leer nota →</a>
+                    </div>
+                </article>
+                <?php endforeach; ?>
+            </div>
+            <?php else: ?>
+            <div class="vacio">
+                <p>⚽ No pudimos traer las noticias en este momento.</p>
+                <p style="margin-top:8px;font-size:0.85rem;">Probá recargar la página en un ratito. En Render gratis el servidor a veces tarda en despertar.</p>
+            </div>
+            <?php endif; ?>
+            <p class="foot-note">
+                Las noticias se toman automáticamente de Google News (diarios como Olé, TyC, ESPN y otros). Cada titular te lleva a la nota original del medio.<br>
+                El Punto de Encuentro · comunidad Xeneize · conducido por Michael Novoa.
+            </p>
         </div>
-        <?php else: ?>
-        <div class="vacio">
-            <p>⚽ No pudimos traer las noticias en este momento.</p>
-            <p style="margin-top:8px;font-size:0.85rem;">Probá recargar la página en un ratito. En Render gratis el servidor a veces tarda en despertar.</p>
-        </div>
-        <?php endif; ?>
-
-        <p class="foot-note">
-            Las noticias se toman automáticamente de Google News (diarios como Olé, TyC, ESPN y otros). Cada titular te lleva a la nota original del medio.<br>
-            El Punto de Encuentro · comunidad Xeneize · conducido por Michael Novoa.
-        </p>
-    </main>
+    </div>
 
     <script>
         function copiarAlias(){
-            const alias = document.getElementById('mpAlias').textContent.trim();
+            const alias = document.getElementById('mpAlias').querySelector('code').textContent.trim();
             navigator.clipboard?.writeText(alias).then(() => {
-                const b = document.querySelector('.mp-copy'); const o = b.textContent; b.textContent = '¡Copiado!';
+                const b = document.querySelector('.mp-copy'); 
+                const o = b.textContent; 
+                b.textContent = '¡Copiado!';
                 setTimeout(() => b.textContent = o, 1500);
             });
         }
