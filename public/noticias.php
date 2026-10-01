@@ -3,11 +3,7 @@
  |------------------------------------------------------------------
  | NOTICIAS DE BOCA JUNIORS - El Punto de Encuentro
  |------------------------------------------------------------------
- | Trae solo las ultimas noticias de Boca desde Google News (gratis)
- | y las guarda un ratito en cache para que cargue rapido en Render.
- | No hay que cargar nada a mano: se actualiza solo.
  */
-// ---- CONFIG ----
 $FEED_URL  = 'https://news.google.com/rss/search?q=%22Boca+Juniors%22&hl=es-419&gl=AR&ceid=AR:es-419';
 $CACHE_MIN = 15;
 $MAX_NOTICIAS = 24;
@@ -15,7 +11,6 @@ $cacheDir  = __DIR__ . '/../storage/app/datos';
 $cacheFile = $cacheDir . '/noticias_boca.xml';
 if (!is_dir($cacheDir)) { @mkdir($cacheDir, 0775, true); }
 
-// ---- TRAER EL FEED ----
 function bajarFeed($url) {
     if (function_exists('curl_init')) {
         $ch = curl_init($url);
@@ -47,7 +42,6 @@ if ($cacheValido) {
     }
 }
 
-// ---- PARSEAR ----
 $noticias = [];
 if ($xmlData) {
     libxml_use_internal_errors(true);
@@ -70,7 +64,6 @@ if ($xmlData) {
     }
 }
 
-// ---- FECHA LINDA ----
 function fechaLinda($pubDate) {
     if (!$pubDate) return '';
     $ts = strtotime($pubDate);
@@ -109,7 +102,7 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
         body { background-color: var(--bg-base); color: var(--text-main); display: flex; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
 
-        /* --- SIDEBAR IGUAL A IMAGEN DERECHA --- */
+        /* --- SIDEBAR MEJORADA --- */
         .sidebar { 
             width: 270px; 
             background: var(--bg-surface); 
@@ -120,20 +113,45 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
             top: 0; left: 0; 
             height: 100vh; 
             z-index: 1000; 
-            padding: 20px 15px; 
+            padding: 24px 18px; 
         }
+        /* --- TÍTULO EXACTO COMO LA IMAGEN --- */
         .sidebar-brand { 
-            font-weight: 800; 
-            font-size: 1.1rem; 
+            font-weight: 900; 
+            font-size: 1.25rem; 
             color: #fff; 
-            display: flex; 
-            align-items: center; 
-            gap: 8px; 
-            padding: 10px 12px; 
-            margin-bottom: 25px; 
-            line-height: 1.3;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 6px 8px;
+            padding: 6px 12px 14px 12px; 
+            margin-bottom: 28px; 
+            border-bottom: 1px solid var(--border);
+            line-height: 1.1;
+            letter-spacing: 0.3px;
         }
-        .sidebar-brand span { color: var(--accent); }
+        .sidebar-brand .icon-flash {
+            grid-row: 1 / 3;
+            font-size: 1.4rem;
+            align-self: center;
+        }
+        .sidebar-brand .line1 {
+            grid-column: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .sidebar-brand .de {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #e5e7eb;
+        }
+        .sidebar-brand .encuentro {
+            color: var(--accent);
+            font-size: 1.25rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
         .sidebar-menu { display: flex; flex-direction: column; gap: 4px; flex: 1; overflow-y: auto; }
         .menu-label { 
             font-size: 0.7rem; 
@@ -159,7 +177,6 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
         .sidebar-link:hover { background: var(--bg-surface-hover); }
         .sidebar-link.active { background: var(--bg-active); color: var(--accent); font-weight: 600; }
         .sidebar-divider { height: 1px; background: transparent; margin: 4px 0; }
-        .sidebar-link.coming-soon { opacity: 1; }
         .badge-soon { 
             margin-left: auto; 
             background: var(--accent); 
@@ -186,7 +203,6 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
         .social-pill.youtube:hover { background: #cc0000; border-color: #cc0000; color: #fff; }
         .social-pill.tiktok:hover { background: #ff0050; border-color: #ff0050; color: #fff; }
         
-        /* --- CAJA MERCADO PAGO IGUAL A IMAGEN --- */
         .mp-box { 
             margin-top: 16px; 
             background: linear-gradient(135deg, rgba(0,158,227,0.15), rgba(245,158,11,0.08)); 
@@ -222,7 +238,6 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
             font-size: 0.75rem;
         }
         
-        /* --- CONTENEDOR PRINCIPAL --- */
         .main-wrapper { margin-left: 270px; flex: 1; display: flex; flex-direction: column; min-height: 100vh; width: calc(100% - 270px); }
         .top-header { 
             padding: 20px 40px; 
@@ -239,7 +254,6 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
         .top-header h2 { font-size: 1.15rem; font-weight: 700; color: #fff; }
         .content-container { padding: 35px 40px; display: flex; flex-direction: column; gap: 25px; width: 100%; flex: 1; }
         
-        /* --- NOTICIAS --- */
         .page-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
         .page-title { font-size: 1.9rem; font-weight: 800; }
         .page-title .em { color: var(--accent); }
@@ -270,20 +284,25 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
         .vacio { background: var(--bg-card); border: 1px dashed var(--border); border-radius: 14px; padding: 40px; text-align: center; color: var(--text-muted); }
         .foot-note { margin-top: 26px; font-size: 0.75rem; color: var(--text-muted); line-height: 1.6; }
         
-        /* --- RESPONSIVE --- */
         @media (max-width: 850px) {
             body { flex-direction: column; }
-            .sidebar { position: relative; width: 100%; height: auto; }
+            .sidebar { position: relative; width: 100%; height: auto; padding: 18px; }
             .main-wrapper { margin-left: 0; width: 100%; }
             .top-header, .content-container { padding-left: 20px; padding-right: 20px; }
+            .sidebar-brand { grid-template-columns: auto 1fr; font-size: 1.1rem; }
+            .sidebar-brand .encuentro { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- ================= NAVBAR ================= -->
+    <!-- ================= NAVBAR CON TÍTULO PERFECTO ================= -->
 <aside class="sidebar">
     <a href="index.php" class="sidebar-brand">
-        ⚡ PUNTO DE <span>ENCUENTRO</span>
+        <span class="icon-flash">⚡</span>
+        <span class="line1">
+            <strong>PUNTO DE</strong>
+        </span>
+        <span class="encuentro">ENCUENTRO</span>
     </a>
 
     <nav class="sidebar-menu">
