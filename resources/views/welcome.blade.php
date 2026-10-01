@@ -680,10 +680,10 @@
                     <div class="panel-title">📺 Último Análisis en Directo</div>
                     <p>Reviví el programa más reciente directamente haciendo clic en el reproductor.</p>
                     
-                    <a href="https://www.youtube.com/watch?v=SGnprjuOyWM" target="_blank" rel="noopener" class="video-card-preview">
-                        <img src="https://img.youtube.com/vi/SGnprjuOyWM/maxresdefault.jpg" alt="Último video del canal">
-                        <div class="play-overlay-btn">▶</div>
-                    </a>
+                    <a href="https://www.youtube.com/watch?v=176puJU8s-s" target="_blank" rel="noopener" class="video-card-preview">
+                   <img src="https://img.youtube.com/vi/176puJU8s-s/maxresdefault.jpg" alt="Último video del canal">
+                   <div class="play-overlay-btn">▶</div>
+                   </a>
 
                     <div>
                         <a href="https://www.youtube.com/@PuntoDeEncuentroYT" target="_blank" rel="noopener" class="card-link-text">Ver más transmisiones en YouTube &rarr;</a>
