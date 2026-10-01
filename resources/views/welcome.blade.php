@@ -600,10 +600,84 @@
             .main-wrapper { margin-left: 0; width: 100%; }
             .pago-item.holder { flex-direction: column; align-items: flex-start; }
         }
+
+        /* ========== FONDO ANIMADO: PARTICULAS + FLASHES BOMBONERA ========== */
+    .bg-animado {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: flotar linear infinite;
+}
+@keyframes flotar {
+    0%   { opacity: 0; transform: translateY(100vh) scale(0); }
+    10%  { opacity: 0.6; }
+    90%  { opacity: 0.6; }
+    100% { opacity: 0; transform: translateY(-10vh) scale(1); }
+}
+.flash {
+    position: absolute;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    background: #fff;
+    animation: destello 4s ease-in-out infinite;
+}
+@keyframes destello {
+    0%   { opacity: 0; transform: scale(0.5); }
+    5%   { opacity: 0.9; transform: scale(2.5); box-shadow: 0 0 20px 8px rgba(255,255,255,0.5); }
+    10%  { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 0; }
+}
+.sidebar, .main-wrapper {
+    position: relative;
+    z-index: 1;
+}
     </style>
 </head>
 
 <body>
+
+<!-- FONDO ANIMADO: partículas + flashes de estadio -->
+<div class="bg-animado">
+    <div class="particle" style="left:5%;  width:8px; height:8px; background:#0055A0; animation-duration:14s; animation-delay:0s;"></div>
+    <div class="particle" style="left:12%; width:5px; height:5px; background:#F5B301; animation-duration:18s; animation-delay:2s;"></div>
+    <div class="particle" style="left:22%; width:10px;height:10px;background:#0055A0; animation-duration:16s; animation-delay:4s;"></div>
+    <div class="particle" style="left:30%; width:6px; height:6px; background:#F5B301; animation-duration:20s; animation-delay:1s;"></div>
+    <div class="particle" style="left:38%; width:9px; height:9px; background:#0055A0; animation-duration:15s; animation-delay:6s;"></div>
+    <div class="particle" style="left:48%; width:4px; height:4px; background:#F5B301; animation-duration:22s; animation-delay:3s;"></div>
+    <div class="particle" style="left:55%; width:7px; height:7px; background:#0055A0; animation-duration:17s; animation-delay:5s;"></div>
+    <div class="particle" style="left:63%; width:11px;height:11px;background:#F5B301; animation-duration:13s; animation-delay:7s;"></div>
+    <div class="particle" style="left:70%; width:5px; height:5px; background:#0055A0; animation-duration:19s; animation-delay:2s;"></div>
+    <div class="particle" style="left:78%; width:8px; height:8px; background:#F5B301; animation-duration:16s; animation-delay:4s;"></div>
+    <div class="particle" style="left:85%; width:6px; height:6px; background:#0055A0; animation-duration:21s; animation-delay:1s;"></div>
+    <div class="particle" style="left:92%; width:9px; height:9px; background:#F5B301; animation-duration:14s; animation-delay:6s;"></div>
+    <div class="particle" style="left:8%;  width:4px; height:4px; background:#F5B301; animation-duration:23s; animation-delay:8s;"></div>
+    <div class="particle" style="left:18%; width:7px; height:7px; background:#0055A0; animation-duration:15s; animation-delay:9s;"></div>
+    <div class="particle" style="left:42%; width:6px; height:6px; background:#F5B301; animation-duration:20s; animation-delay:7s;"></div>
+    <div class="particle" style="left:58%; width:10px;height:10px;background:#0055A0; animation-duration:12s; animation-delay:3s;"></div>
+    <div class="particle" style="left:75%; width:5px; height:5px; background:#F5B301; animation-duration:18s; animation-delay:5s;"></div>
+    <div class="particle" style="left:88%; width:8px; height:8px; background:#0055A0; animation-duration:16s; animation-delay:9s;"></div>
+    <div class="flash" style="left:10%; top:20%; animation-delay:0s;"></div>
+    <div class="flash" style="left:25%; top:45%; animation-delay:0.8s;"></div>
+    <div class="flash" style="left:45%; top:15%; animation-delay:1.6s;"></div>
+    <div class="flash" style="left:60%; top:65%; animation-delay:2.4s;"></div>
+    <div class="flash" style="left:80%; top:30%; animation-delay:3.2s;"></div>
+    <div class="flash" style="left:15%; top:75%; animation-delay:0.5s;"></div>
+    <div class="flash" style="left:35%; top:85%; animation-delay:1.3s;"></div>
+    <div class="flash" style="left:55%; top:50%; animation-delay:2.1s;"></div>
+    <div class="flash" style="left:70%; top:10%; animation-delay:2.9s;"></div>
+    <div class="flash" style="left:90%; top:55%; animation-delay:3.6s;"></div>
+    <div class="flash" style="left:50%; top:35%; animation-delay:0.3s;"></div>
+    <div class="flash" style="left:5%;  top:60%; animation-delay:1.8s;"></div>
+</div>
 
     <aside class="sidebar">
         <a href="index.php" class="sidebar-brand">
