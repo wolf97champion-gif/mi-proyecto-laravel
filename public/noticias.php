@@ -102,61 +102,44 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
     <meta http-equiv="refresh" content="900">
     <style>
         :root {
-            --bg-base: #0b0e14;
-            --bg-card: #131824;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --accent: #f5b301;
+            --bg-base: #07090e;
+            --bg-surface: #0f131c;
+            --bg-surface-hover: #161b26;
+            --bg-active: rgba(245, 158, 11, 0.12);
+            --accent: #f59e0b;
+            --accent-glow: rgba(245, 158, 11, 0.15);
             --accent2: #009ee3;
-            --border: rgba(255,255,255,0.08);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border: rgba(255, 255, 255, 0.08);
+            --shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.7);
+            --bg-card: #131824; /* Para tarjetas de noticias */
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: var(--bg-base);
-            color: var(--text-main);
-            display: flex;
-            min-height: 100vh;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg-base); color: var(--text-main); display: flex; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
 
-        /* ---- SIDEBAR / NAVBAR ---- */
-        .sidebar {
-            width: 260px;
-            background: linear-gradient(180deg, #0e131f, #0b0e14);
-            border-right: 1px solid var(--border);
-            padding: 22px 18px;
-            display: flex;
-            flex-direction: column;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-        }
-        .brand { font-size: 1.15rem; font-weight: 800; letter-spacing: 0.5px; color: var(--accent); margin-bottom: 4px; }
-        .brand span { color: var(--accent2); }
-        .brand-sub { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 22px; }
-        .nav-title { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin: 14px 0 8px; }
-        .nav-link {
-            display: flex; align-items: center; gap: 9px;
-            padding: 9px 11px; border-radius: 9px; font-size: 0.88rem;
-            color: var(--text-muted); font-weight: 600; margin-bottom: 3px;
-            transition: all 0.15s;
-        }
-        .nav-link:hover { background: rgba(255,255,255,0.05); color: var(--text-main); }
-        .nav-link.active { background: rgba(245,179,1,0.14); color: var(--accent); }
-        .badge-pronto { font-size: 0.55rem; background: #f97316; color: #000; padding: 2px 6px; border-radius: 5px; font-weight: 800; margin-left: auto; }
-
-        .sidebar-footer { margin-top: auto; padding-top: 18px; }
-        .sidebar-socials { display: flex; flex-direction: column; gap: 7px; }
-        .social-pill {
-            display: flex; align-items: center; gap: 8px;
-            padding: 8px 11px; border-radius: 9px; font-size: 0.8rem; font-weight: 700;
-            border: 1px solid var(--border); color: var(--text-muted); transition: all 0.15s;
-        }
-        .social-pill.youtube:hover { background: #ff0000; border-color: #ff0000; color: #fff; }
+        /* --- SIDEBAR — IGUAL A PLANTEL.PHP --- */
+        .sidebar { width: 270px; background: var(--bg-surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; position: fixed; top: 0; left: 0; height: 100vh; z-index: 1000; padding: 20px 15px; }
+        .sidebar-brand { font-weight: 800; font-size: 1.1rem; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 10px; padding: 10px 12px; margin-bottom: 25px; }
+        .sidebar-brand span { color: var(--accent); }
+        .sidebar-menu { display: flex; flex-direction: column; gap: 6px; flex: 1; overflow-y: auto; }
+        .menu-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); padding: 10px 12px 5px 12px; font-weight: 700; }
+        .sidebar-link { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; text-decoration: none; color: var(--text-main); font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease; }
+        .sidebar-link span.icon { font-size: 1.1rem; width: 20px; text-align: center; }
+        .sidebar-link:hover { background: var(--bg-surface-hover); color: #fff; }
+        .sidebar-link.active { background: var(--bg-active); color: var(--accent); font-weight: 600; }
+        .sidebar-divider { height: 1px; background: var(--border); margin: 12px 0; }
+        .sidebar-link.coming-soon { opacity: 0.6; cursor: default; }
+        .sidebar-link.coming-soon:hover { background: transparent; color: var(--text-main); }
+        .badge-soon { margin-left: auto; background: rgba(245, 158, 11, 0.15); color: var(--accent); font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 6px; text-transform: uppercase; }
+        .sidebar-footer { padding-top: 15px; border-top: 1px solid var(--border); }
+        .sidebar-socials { display: flex; gap: 8px; margin-top: 8px; }
+        .social-pill { flex: 1; padding: 8px; border-radius: 8px; font-size: 0.78rem; font-weight: 600; text-align: center; text-decoration: none; background: var(--bg-base); color: var(--text-main); border: 1px solid var(--border); transition: 0.2s; }
+        .social-pill.youtube:hover { background: #cc0000; border-color: #cc0000; color: #fff; }
         .social-pill.tiktok:hover { background: #ff0050; border-color: #ff0050; color: #fff; }
-
-        /* --- CAJA MERCADO PAGO EN EL NAVBAR --- */
+        
+        /* --- CAJA MERCADO PAGO --- */
         .mp-box { margin-top: 14px; background: linear-gradient(135deg, rgba(0,158,227,0.18), rgba(245,158,11,0.10)); border: 1px solid rgba(0,158,227,0.35); border-radius: 12px; padding: 12px; }
         .mp-box .mp-title { font-size: 0.72rem; font-weight: 800; color: #35c2ff; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
         .mp-row { font-size: 0.74rem; color: var(--text-muted); margin-bottom: 4px; }
@@ -166,8 +149,13 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
         .mp-copy { background: var(--accent); color: #000; border: none; border-radius: 6px; padding: 4px 9px; font-size: 0.68rem; font-weight: 800; cursor: pointer; }
         .mp-copy:hover { background: #fbbf24; }
 
-        /* ---- CONTENIDO ---- */
-        .main { flex: 1; padding: 32px 38px; max-width: 1100px; }
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .main-wrapper { margin-left: 270px; flex: 1; display: flex; flex-direction: column; min-height: 100vh; width: calc(100% - 270px); }
+        .top-header { padding: 20px 40px; border-bottom: 1px solid var(--border); background: rgba(7, 9, 14, 0.85); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 999; }
+        .top-header h2 { font-size: 1.15rem; font-weight: 700; color: #fff; }
+        .content-container { padding: 35px 40px; display: flex; flex-direction: column; gap: 25px; width: 100%; flex: 1; }
+
+        /* --- ESTILOS EXCLUSIVOS DE NOTICIAS --- */
         .page-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
         .page-title { font-size: 1.9rem; font-weight: 800; }
         .page-title .em { color: var(--accent); }
@@ -180,47 +168,70 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
         }
         .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; animation: pulso 1.4s infinite; }
         @keyframes pulso { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
-
+        
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
         .card {
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: 14px; padding: 18px; display: flex; flex-direction: column;
             transition: transform 0.15s, border-color 0.15s;
         }
-        .card:hover { transform: translateY(-3px); border-color: rgba(245,179,1,0.4); }
+        .card:hover { transform: translateY(-3px); border-color: rgba(245,158,11,0.4); }
         .card-fuente { font-size: 0.7rem; font-weight: 800; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
         .card-titulo { font-size: 1.02rem; font-weight: 700; line-height: 1.4; color: var(--text-main); margin-bottom: 14px; }
         .card-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; }
         .card-fecha { font-size: 0.75rem; color: var(--text-muted); }
         .card-link { font-size: 0.78rem; font-weight: 800; color: var(--accent); }
         .card-link:hover { text-decoration: underline; }
-
+        
         .vacio { background: var(--bg-card); border: 1px dashed var(--border); border-radius: 14px; padding: 40px; text-align: center; color: var(--text-muted); }
         .foot-note { margin-top: 26px; font-size: 0.75rem; color: var(--text-muted); line-height: 1.6; }
 
-        @media (max-width: 800px) {
+        /* --- RESPONSIVE --- */
+        @media (max-width: 850px) {
             body { flex-direction: column; }
-            .sidebar { width: 100%; height: auto; position: static; }
-            .main { padding: 22px; }
+            .sidebar { position: relative; width: 100%; height: auto; }
+            .main-wrapper { margin-left: 0; width: 100%; }
+            .top-header, .content-container { padding-left: 20px; padding-right: 20px; }
         }
-    </style>
+</style>
+
 </head>
 <body>
     <!-- ================= NAVBAR ================= -->
-    <aside class="sidebar">
-        <a href="index.php" class="brand" style="text-decoration:none;">PUNTO DE <span>ENCUENTRO</span></a>
-        <div class="brand-sub">La web de la comunidad Xeneize</div>
+<aside class="sidebar">
+    <a href="index.php" class="sidebar-brand">
+        ⚡ PUNTO DE <span>ENCUENTRO</span>
+    </a>
 
-        <div class="nav-title">Menú</div>
-        <a href="index.php" class="nav-link">🏠 Inicio</a>
-        <a href="podio.php" class="nav-link">🏆 Podio de Jugadores</a>
-        <a href="estadisticas.php" class="nav-link">📊 Estadísticas</a>
-        <a href="foro.php" class="nav-link">💬 Foro y Debates</a>
-        <a href="plantel.php" class="nav-link">👕 Plantel Actual</a>
-        <a href="noticias.php" class="nav-link active">📰 Noticias</a>
+    <nav class="sidebar-menu">
+        <div class="menu-label">Menú Principal</div>
 
-        <div class="nav-title">Archivo Histórico</div>
-        <a href="#" class="nav-link">📚 Sección de Historia <span class="badge-pronto">PRONTO</span></a>
+        <a href="index.php" class="sidebar-link">
+            <span class="icon">🏠</span> Inicio
+        </a>
+        <a href="podio.php" class="sidebar-link">
+            <span class="icon">🏆</span> Podio de Jugadores
+        </a>
+        <a href="estadisticas.php" class="sidebar-link">
+            <span class="icon">📊</span> Estadísticas
+        </a>
+        <a href="foro.php" class="sidebar-link">
+            <span class="icon">💬</span> Foro y Debates
+        </a>
+        <a href="plantel.php" class="sidebar-link">
+            <span class="icon">👕</span> Plantel Actual
+        </a>
+        <a href="noticias.php" class="sidebar-link active">
+            <span class="icon">📰</span> Noticias
+        </a>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="menu-label">Archivo Histórico</div>
+        <div class="sidebar-link coming-soon">
+            <span class="icon">📚</span> Sección de Historia
+            <span class="badge-soon">PRONTO</span>
+        </div>
 
         <div class="sidebar-footer">
             <div class="sidebar-socials">
@@ -228,17 +239,18 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
                 <a href="https://www.tiktok.com/@michaelnovoa16" target="_blank" class="social-pill tiktok">TikTok</a>
             </div>
 
-            <!-- CAJA MERCADO PAGO -->
+            <!-- CAJA MERCADO PAGO (igual al resto) -->
             <div class="mp-box">
-                <div class="mp-title">💳 APOYÁ AL CANAL · MERCADO PAGO</div>
-                <div class="mp-row">Titular: <b>Michael Novoa y Gonzalez</b></div>
+                <div class="mp-title">💙 Apoyar el proyecto</div>
+                <div class="mp-row">Mercado Pago</div>
                 <div class="mp-alias">
-                    <code id="mpAlias">michael.ok.mp</code>
-                    <button class="mp-copy" type="button" onclick="copiarAlias()">Copiar</button>
+                    <code>tu-alias-aqui</code>
+                    <button class="mp-copy">Copiar</button>
                 </div>
             </div>
         </div>
-    </aside>
+    </nav>
+</aside>
 
     <!-- ================= CONTENIDO ================= -->
     <main class="main">
