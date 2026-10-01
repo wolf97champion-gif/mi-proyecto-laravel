@@ -17,11 +17,12 @@ require __DIR__ . '/tracker.php';
  *    Se define en un arreglo para no repetir HTML y facilitar cambios.
  * ---------------------------------------------------------------------- */
 $menuPrincipal = [
-    ['archivo' => 'index.php',         'icono' => '🏠', 'texto' => 'Inicio'],
-    ['archivo' => 'podio.php',         'icono' => '🏆', 'texto' => 'Podio de Jugadores'],
-    ['archivo' => 'estadisticas.php',  'icono' => '📊', 'texto' => 'Estadísticas'],
-    ['archivo' => 'foro.php',          'icono' => '💬', 'texto' => 'Foro y Debates'],
-    ['archivo' => 'plantel.php',       'icono' => '👥', 'texto' => 'Plantel Actual'],
+    ['archivo' => 'index.php',        'icono' => '🏠', 'texto' => 'Inicio'],
+    ['archivo' => 'podio.php',        'icono' => '🏆', 'texto' => 'Podio de Jugadores'],
+    ['archivo' => 'estadisticas.php', 'icono' => '📊', 'texto' => 'Estadísticas'],
+    ['archivo' => 'foro.php',         'icono' => '💬', 'texto' => 'Foro y Debates'],
+    ['archivo' => 'plantel.php',      'icono' => '👥', 'texto' => 'Plantel Actual'],
+    ['archivo' => 'noticias.php',     'icono' => '📰', 'texto' => 'Noticias'],
 ];
 
 // Enlaces del bloque "Archivo Histórico" (contenido futuro).
