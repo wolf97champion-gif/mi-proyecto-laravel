@@ -715,10 +715,11 @@
 
     <div class="menu-label">Archivo Histórico</div>
 
-    <a href="#" class="sidebar-link coming-soon">
-        <span class="icon">📜</span> Sección de Historia
-        <span class="badge-soon">Pronto</span>
+    <!-- Código modificado -->
+    <a href="historia.php" class="menu-item">
+  <span>📜 Sección de Historia</span>
     </a>
+    
 </div>
         <div class="sidebar-footer">
             <div class="menu-label" style="padding-left:0; margin-bottom: 2px;">Redes Oficiales</div>
