@@ -1,4 +1,4 @@
-<?php require public_path('tracker.php'); ?>
+<?php require __DIR__ . '/tracker.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
