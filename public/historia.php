@@ -522,21 +522,20 @@
                     <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
                 </div>
             </div>
-            <!-- === LIBRO 3 === -->
-            <div class="libro-card" data-id="3">
-                <div class="libro-portada">🏛️</div>
-                <div class="libro-info">
-                    <span class="libro-cat">Imperio Romano</span>
-                    <h3 class="libro-titulo">Historia de Roma</h3>
-                    <p class="libro-autor">Tito Livio</p>
-                    <p class="libro-desc">Del nacimiento de Roma al apogeo del imperio más influyente de la Antigüedad.</p>
-                    <div class="libro-botones">
-                        <a href="archivos-pdf/historia-roma.pdf" class="btn-descargar" download>📥 Descargar</a>
-                        <button class="btn-copiar" data-link="archivos-pdf/historia-roma.pdf">🔗 Copiar Enlace</button>
-                    </div>
-                    <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
-                </div>
-            </div>
+            <!-- === Historia Argentina - Ternavasio === -->
+           <div class="libro-card" data-id="ternavasio">
+               <div class="libro-portada">🇦🇷</div>
+               <div class="libro-info">
+        <span class="libro-cat">Historia Argentina</span>
+        <h3 class="libro-titulo">Historia de Argentina</h3>
+        <p class="libro-autor">Marcela Ternavasio</p>
+        <p class="libro-desc">Análisis y reflexión sobre la historia argentina contemporánea.</p>
+        <div class="libro-botones">
+            <a href="archivos-pdf/historia-argentina.pdf" class="btn-descargar" download>📥 Descargar</a>
+            <button class="btn-copiar" data-ruta="archivos-pdf/historia-argentina.pdf">🔗 Copiar Enlace</button>
+        </div>
+    </div>
+</div>
             <!-- === LIBRO 4 === -->
             <div class="libro-card" data-id="4">
                 <div class="libro-portada">🏰</div>
