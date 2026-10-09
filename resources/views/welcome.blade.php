@@ -679,8 +679,11 @@
     <div class="flash" style="left:5%;  top:60%; animation-delay:1.8s;"></div>
 </div>
 
-<div class="sidebar-menu">
-    <div class="menu-label">Menú Principal</div>
+<aside class="sidebar">
+    <a href="index.php" class="sidebar-brand">⚡ <span>PUNTO DE ENCUENTRO</span></a>
+
+    <div class="sidebar-menu">
+        <div class="menu-label">Menú Principal</div>
     
     <a href="index.php" class="sidebar-link active">
         <span class="icon">🏠</span> Inicio
