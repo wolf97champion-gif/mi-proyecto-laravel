@@ -679,14 +679,9 @@
     <div class="flash" style="left:5%;  top:60%; animation-delay:1.8s;"></div>
 </div>
 
-    <aside class="sidebar">
-        <a href="index.php" class="sidebar-brand">
-            ⚡ <span>PUNTO DE ENCUENTRO</span>
-        </a>
-
-        <div class="sidebar-menu">
+<div class="sidebar-menu">
     <div class="menu-label">Menú Principal</div>
-
+    
     <a href="index.php" class="sidebar-link active">
         <span class="icon">🏠</span> Inicio
     </a>
@@ -694,32 +689,30 @@
     <a href="podio.php" class="sidebar-link">
         <span class="icon">🏆</span> Podio de Jugadores
     </a>
-
+    
     <a href="estadisticas.php" class="sidebar-link">
         <span class="icon">📊</span> Estadísticas
     </a>
-
+    
     <a href="foro.php" class="sidebar-link">
         <span class="icon">💬</span> Foro y Debates
     </a>
-
+    
     <a href="plantel.php" class="sidebar-link">
         <span class="icon">👥</span> Plantel Actual
+    
     </a>
-
     <a href="noticias.php" class="sidebar-link">
         <span class="icon">📰</span> Noticias
     </a>
-
-    <div class="sidebar-divider"></div>
-
-    <div class="menu-label">Archivo Histórico</div>
-
-    <!-- Código modificado -->
-    <a href="historia.php" class="menu-item">
-  <span>📜 Sección de Historia</span>
-    </a>
     
+    <div class="sidebar-divider"></div>
+    
+    <div class="menu-label">Archivo Histórico</div>
+    <a href="historia.php" class="sidebar-link">
+        <span class="icon">📜</span> Sección de Historia
+    </a>
+
 </div>
         <div class="sidebar-footer">
             <div class="menu-label" style="padding-left:0; margin-bottom: 2px;">Redes Oficiales</div>
