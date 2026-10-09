@@ -493,28 +493,21 @@
         <!-- GRILLA DE LIBROS -->
         <div class="biblioteca-grid" id="gridLibros">
          <!-- Breve Historia -->
-<a href="{{ asset('archivos-pdf/breve-historia.pdf') }}" class="btn-descargar" download>📥 Descargar</a>
-<button class="btn-copiar" data-link="{{ asset('archivos-pdf/breve-historia.pdf') }}">🔗 Copiar Enlace</button>
-
-<!-- Historia Argentina - Ternavasio -->
-<a href="{{ asset('archivos-pdf/historia-argentina.pdf') }}" class="btn-descargar" download>📥 Descargar</a>
-<button class="btn-copiar" data-link="{{ asset('archivos-pdf/historia-argentina.pdf') }}">🔗 Copiar Enlace</button>
-
-<!-- Historia de Grecia -->
-<a href="{{ asset('archivos-pdf/historia-grecia.pdf') }}" class="btn-descargar" download>📥 Descargar</a>
-<button class="btn-copiar" data-link="{{ asset('archivos-pdf/historia-grecia.pdf') }}">🔗 Copiar Enlace</button>
-
-<!-- Edad Media -->
-<a href="{{ asset('archivos-pdf/edad-media.pdf') }}" class="btn-descargar" download>📥 Descargar</a>
-<button class="btn-copiar" data-link="{{ asset('archivos-pdf/edad-media.pdf') }}">🔗 Copiar Enlace</button>
-
-<!-- Venas Abiertas -->
-<a href="{{ asset('archivos-pdf/venas-abiertas.pdf') }}" class="btn-descargar" download>📥 Descargar</a>
-<button class="btn-copiar" data-link="{{ asset('archivos-pdf/venas-abiertas.pdf') }}">🔗 Copiar Enlace</button>
-
-<!-- Siglo XX -->
-<a href="{{ asset('archivos-pdf/siglo-xx.pdf') }}" class="btn-descargar" download>📥 Descargar</a>
-<button class="btn-copiar" data-link="{{ asset('archivos-pdf/siglo-xx.pdf') }}">🔗 Copiar Enlace</button>
+         <!-- Historia Argentina - Ternavasio -->
+<div class="libro-card">
+    <div class="libro-portada">🇦🇷</div>
+    <div class="libro-info">
+        <span class="libro-cat">HISTORIA ARGENTINA</span>
+        <h3 class="libro-titulo">Historia de Argentina</h3>
+        <p class="libro-autor">Marcela Ternavasio</p>
+        <p class="libro-desc">Análisis y reflexión sobre la historia argentina contemporánea.</p>
+        <div class="libro-botones">
+            <a href="../archivos-pdf/historia-argentina.pdf" class="btn-descargar" download>📥 Descargar</a>
+            <button class="btn-copiar" data-link="../archivos-pdf/historia-argentina.pdf">🔗 Copiar Enlace</button>
+            <button class="btn-borrar">🗑️ Borrar</button>
+        </div>
+    </div>
+</div>
     </main>
     <!-- Footer -->
     <div class="footer">
