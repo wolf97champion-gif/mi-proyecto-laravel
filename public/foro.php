@@ -205,7 +205,7 @@ require __DIR__ . '/tracker.php';
 
             <div class="sidebar-divider"></div>
             <div class="menu-label">Archivo Histórico</div>
-            <a href="#" class="sidebar-link"><span class="icon">📜</span> Sección de Historia <span class="badge-soon">Pronto</span></a>
+            <a href="historia.php" class="sidebar-link"><span class="icon">📜</span> Sección de Historia</a>
         </div>
 
         <div class="sidebar-footer">
