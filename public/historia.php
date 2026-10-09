@@ -508,7 +508,7 @@
     </div>
 </div>
 
-<!-- === LIBRO: Historia Argentina - Ternavasio === -->
+<!-- Historia Argentina - Ternavasio -->
 <div class="libro-card">
     <div class="libro-portada">🇦🇷</div>
     <div class="libro-info">
@@ -517,8 +517,8 @@
         <p class="libro-autor">Marcela Ternavasio</p>
         <p class="libro-desc">Análisis y reflexión sobre la historia argentina contemporánea.</p>
         <div class="libro-botones">
-            <a href="/archivos-pdf/historia-argentina.pdf" class="btn-descargar" download>📥 Descargar</a>
-            <button class="btn-copiar" data-link="/archivos-pdf/historia-argentina.pdf">🔗 Copiar Enlace</button>
+            <a href="archivos-pdf/historia-argentina.pdf" class="btn-descargar" download>📥 Descargar</a>
+            <button class="btn-copiar" data-link="archivos-pdf/historia-argentina.pdf">🔗 Copiar Enlace</button>
             <button class="btn-borrar">🗑️ Borrar</button>
         </div>
     </div>
