@@ -492,97 +492,101 @@
         </div>
         <!-- GRILLA DE LIBROS -->
         <div class="biblioteca-grid" id="gridLibros">
-            <!-- === LIBRO 1 === -->
-            <div class="libro-card" data-id="1">
-                <div class="libro-portada">🏺</div>
-                <div class="libro-info">
-                    <span class="libro-cat">Historia Universal</span>
-                    <h3 class="libro-titulo">Breve historia del mundo</h3>
-                    <p class="libro-autor">E. H. Gombrich</p>
-                    <p class="libro-desc">Un recorrido ameno por la historia de la humanidad, pensado para entender el pasado de forma simple y clara.</p>
-                    <div class="libro-botones">
-                        <a href="archivos-pdf/breve-historia.pdf" class="btn-descargar" download>📥 Descargar</a>
-                        <button class="btn-copiar" data-link="archivos-pdf/breve-historia.pdf">🔗 Copiar Enlace</button>
-                    </div>
-                    <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
-                </div>
-            </div>
-            <!-- === LIBRO 2 === -->
-            <div class="libro-card" data-id="2">
-                <div class="libro-portada">⚔️</div>
-                <div class="libro-info">
-                    <span class="libro-cat">Antigüedad</span>
-                    <h3 class="libro-titulo">Historia de Grecia</h3>
-                    <p class="libro-autor">Herodoto</p>
-                    <p class="libro-desc">Los orígenes de la cultura occidental: guerras, mitos y la vida de las primeras ciudades-estado.</p>
-                    <div class="libro-botones">
-                        <a href="archivos-pdf/historia-grecia.pdf" class="btn-descargar" download>📥 Descargar</a>
-                        <button class="btn-copiar" data-link="archivos-pdf/historia-grecia.pdf">🔗 Copiar Enlace</button>
-                    </div>
-                    <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
-                </div>
-            </div>
-            <!-- === Historia Argentina - Ternavasio === -->
-           <div class="libro-card" data-id="ternavasio">
-               <div class="libro-portada">🇦🇷</div>
-               <div class="libro-info">
-        <span class="libro-cat">Historia Argentina</span>
+            <!-- === LIBRO: Breve Historia === -->
+<div class="libro-card">
+    <div class="libro-portada">📖</div>
+    <div class="libro-info">
+        <span class="libro-cat">HISTORIA MUNDIAL</span>
+        <h3 class="libro-titulo">Breve historia del mundo</h3>
+        <p class="libro-autor">E. H. Gombrich</p>
+        <p class="libro-desc">Una introducción clara y amena a la historia de la humanidad.</p>
+        <div class="libro-botones">
+            <a href="/archivos-pdf/breve-historia.pdf" class="btn-descargar" download>📥 Descargar</a>
+            <button class="btn-copiar" data-link="/archivos-pdf/breve-historia.pdf">🔗 Copiar Enlace</button>
+            <button class="btn-borrar">🗑️ Borrar</button>
+        </div>
+    </div>
+</div>
+
+<!-- === LIBRO: Historia Argentina - Ternavasio === -->
+<div class="libro-card">
+    <div class="libro-portada">🇦🇷</div>
+    <div class="libro-info">
+        <span class="libro-cat">HISTORIA ARGENTINA</span>
         <h3 class="libro-titulo">Historia de Argentina</h3>
         <p class="libro-autor">Marcela Ternavasio</p>
         <p class="libro-desc">Análisis y reflexión sobre la historia argentina contemporánea.</p>
         <div class="libro-botones">
-            <a href="archivos-pdf/historia-argentina.pdf" class="btn-descargar" download>📥 Descargar</a>
-            <button class="btn-copiar" data-ruta="archivos-pdf/historia-argentina.pdf">🔗 Copiar Enlace</button>
+            <a href="/archivos-pdf/historia-argentina.pdf" class="btn-descargar" download>📥 Descargar</a>
+            <button class="btn-copiar" data-link="/archivos-pdf/historia-argentina.pdf">🔗 Copiar Enlace</button>
+            <button class="btn-borrar">🗑️ Borrar</button>
         </div>
-            <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
+    </div>
+</div>
+
+<!-- === LIBRO: Historia de Grecia === -->
+<div class="libro-card">
+    <div class="libro-portada">🏛️</div>
+    <div class="libro-info">
+        <span class="libro-cat">ANTIGÜEDAD</span>
+        <h3 class="libro-titulo">Historia de Grecia</h3>
+        <p class="libro-autor">Herodoto</p>
+        <p class="libro-desc">Los orígenes de la cultura occidental y la vida de las primeras ciudades-estado.</p>
+        <div class="libro-botones">
+            <a href="/archivos-pdf/historia-grecia.pdf" class="btn-descargar" download>📥 Descargar</a>
+            <button class="btn-copiar" data-link="/archivos-pdf/historia-grecia.pdf">🔗 Copiar Enlace</button>
+            <button class="btn-borrar">🗑️ Borrar</button>
         </div>
+    </div>
+</div>
+
+<!-- === LIBRO: Edad Media === -->
+<div class="libro-card">
+    <div class="libro-portada">🏰</div>
+    <div class="libro-info">
+        <span class="libro-cat">EDAD MEDIA</span>
+        <h3 class="libro-titulo">El otoño de la Edad Media</h3>
+        <p class="libro-autor">Johan Huizinga</p>
+        <p class="libro-desc">La vida, el arte y el pensamiento en los últimos siglos del mundo medieval europeo.</p>
+        <div class="libro-botones">
+            <a href="/archivos-pdf/edad-media.pdf" class="btn-descargar" download>📥 Descargar</a>
+            <button class="btn-copiar" data-link="/archivos-pdf/edad-media.pdf">🔗 Copiar Enlace</button>
+            <button class="btn-borrar">🗑️ Borrar</button>
         </div>
-            <!-- === LIBRO 4 === -->
-            <div class="libro-card" data-id="4">
-                <div class="libro-portada">🏰</div>
-                <div class="libro-info">
-                    <span class="libro-cat">Edad Media</span>
-                    <h3 class="libro-titulo">El otoño de la Edad Media</h3>
-                    <p class="libro-autor">Johan Huizinga</p>
-                    <p class="libro-desc">La vida, el arte y el pensamiento en los últimos siglos del mundo medieval europeo.</p>
-                    <div class="libro-botones">
-                        <a href="archivos-pdf/edad-media.pdf" class="btn-descargar" download>📥 Descargar</a>
-                        <button class="btn-copiar" data-link="archivos-pdf/edad-media.pdf">🔗 Copiar Enlace</button>
-                    </div>
-                    <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
-                </div>
-            </div>
-            <!-- === LIBRO 5 === -->
-            <div class="libro-card" data-id="5">
-                <div class="libro-portada">🌍</div>
-                <div class="libro-info">
-                    <span class="libro-cat">Modernidad</span>
-                    <h3 class="libro-titulo">Las venas abiertas de América Latina</h3>
-                    <p class="libro-autor">Eduardo Galeano</p>
-                    <p class="libro-desc">Una mirada crítica sobre la historia económica y política del continente americano.</p>
-                    <div class="libro-botones">
-                        <a href="archivos-pdf/venas-abiertas.pdf" class="btn-descargar" download>📥 Descargar</a>
-                        <button class="btn-copiar" data-link="archivos-pdf/venas-abiertas.pdf">🔗 Copiar Enlace</button>
-                    </div>
-                    <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
-                </div>
-            </div>
-            <!-- === LIBRO 6 === -->
-            <div class="libro-card" data-id="6">
-                <div class="libro-portada">⚙️</div>
-                <div class="libro-info">
-                    <span class="libro-cat">Siglo XX</span>
-                    <h3 class="libro-titulo">Historia del siglo XX</h3>
-                    <p class="libro-autor">Eric Hobsbawm</p>
-                    <p class="libro-desc">Guerras mundiales, revoluciones y los grandes cambios que dieron forma al mundo actual.</p>
-                    <div class="libro-botones">
-                        <a href="archivos-pdf/siglo-xx.pdf" class="btn-descargar" download>📥 Descargar</a>
-                        <button class="btn-copiar" data-link="archivos-pdf/siglo-xx.pdf">🔗 Copiar Enlace</button>
-                    </div>
-                    <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
-                </div>
-            </div>
+    </div>
+</div>
+
+<!-- === LIBRO: Las venas de América Latina === -->
+<div class="libro-card">
+    <div class="libro-portada">🌎</div>
+    <div class="libro-info">
+        <span class="libro-cat">MODERNIDAD</span>
+        <h3 class="libro-titulo">Las venas abiertas de América Latina</h3>
+        <p class="libro-autor">Eduardo Galeano</p>
+        <p class="libro-desc">Una mirada crítica sobre la historia económica y política del continente americano.</p>
+        <div class="libro-botones">
+            <a href="/archivos-pdf/venas-abiertas.pdf" class="btn-descargar" download>📥 Descargar</a>
+            <button class="btn-copiar" data-link="/archivos-pdf/venas-abiertas.pdf">🔗 Copiar Enlace</button>
+            <button class="btn-borrar">🗑️ Borrar</button>
         </div>
+    </div>
+</div>
+
+<!-- === LIBRO: Siglo XX === -->
+<div class="libro-card">
+    <div class="libro-portada">⚙️</div>
+    <div class="libro-info">
+        <span class="libro-cat">SIGLO XX</span>
+        <h3 class="libro-titulo">Historia del siglo XX</h3>
+        <p class="libro-autor">Eric Hobsbawm</p>
+        <p class="libro-desc">Guerras mundiales, revoluciones y los grandes cambios que dieron forma al mundo actual.</p>
+        <div class="libro-botones">
+            <a href="/archivos-pdf/siglo-xx.pdf" class="btn-descargar" download>📥 Descargar</a>
+            <button class="btn-copiar" data-link="/archivos-pdf/siglo-xx.pdf">🔗 Copiar Enlace</button>
+            <button class="btn-borrar">🗑️ Borrar</button>
+        </div>
+    </div>
+</div>
     </main>
     <!-- Footer -->
     <div class="footer">
