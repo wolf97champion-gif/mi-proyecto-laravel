@@ -771,8 +771,7 @@
                        <div class="community-shield">💙💛💙</div>
                        <h3>LA MITAD + 1</h3>
                        <p>¡Viví la pasión de Boca con toda la comunidad!</p>
-                   </div>
-           </div>
+                    </div>
 
                     <a href="https://whatsapp.com/channel/0029Vb7Aq78JJhzXb63HwD09" target="_blank" rel="noopener" class="btn-main">Unirse al Grupo de WhatsApp &rarr;</a>
                 </div>
