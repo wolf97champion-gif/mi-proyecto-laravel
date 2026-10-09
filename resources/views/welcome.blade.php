@@ -763,15 +763,16 @@
 
                 <!-- Panel Comunidad -->
                 <div class="panel">
-                    <div class="panel-title">💬 Comunidad Activa</div>
-                    <p>Sumate al grupo oficial de comunicación para enterarte antes de las previas, horarios de stream y debates abiertos.</p>
+                        <div class="panel-title">📜 Archivo Histórico</div>
+                        <p>Aquí va a la sección de historia...</p>
                     
                     <!-- Elemento decorativo para rellenar el espacio vacío -->
                     <div class="community-banner">
-                        <div class="community-shield">💙💛💙</div>
-                        <h3>LA MITAD + 1</h3>
-                        <p>¡Viví la pasión de Boca con toda la comunidad!</p>
-                    </div>
+                       <div class="community-shield">💙💛💙</div>
+                       <h3>LA MITAD + 1</h3>
+                       <p>¡Viví la pasión de Boca con toda la comunidad!</p>
+                   </div>
+           </div>
 
                     <a href="https://whatsapp.com/channel/0029Vb7Aq78JJhzXb63HwD09" target="_blank" rel="noopener" class="btn-main">Unirse al Grupo de WhatsApp &rarr;</a>
                 </div>
