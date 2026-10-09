@@ -413,7 +413,6 @@
     </style>
 </head>
 <body>
-
 <!-- FONDO ANIMADO -->
 <div class="bg-animado">
     <div class="particle" style="left:5%;  width:8px; height:8px; background:#0055A0; animation-duration:14s; animation-delay:0s;"></div>
@@ -434,7 +433,6 @@
     <div class="flash" style="left:60%; top:65%; animation-delay:2.4s;"></div>
     <div class="flash" style="left:80%; top:30%; animation-delay:3.2s;"></div>
 </div>
-
 <!-- BARRA LATERAL -->
 <aside class="sidebar">
     <a href="index.php" class="sidebar-brand">⚡ <span>PUNTO DE ENCUENTRO</span></a>
@@ -472,14 +470,12 @@
         </div>
     </div>
 </aside>
-
 <!-- CONTENIDO PRINCIPAL -->
 <div class="main-wrapper">
     <header class="top-header">
         <h2>📜 Biblioteca de Historia Mundial</h2>
         <span style="font-size: 0.85rem; color: var(--text-muted);">Creado por Michael Novoa</span>
     </header>
-
     <main class="content-container">
         <!-- Presentación -->
         <div class="hero-section">
@@ -487,7 +483,6 @@
             <h1>Mi <span>Biblioteca</span> Personal</h1>
             <p>Una colección de libros, textos y documentos sobre la historia del mundo. Un espacio para leer, consultar y guardar el conocimiento que me interesa compartir.</p>
         </div>
-
         <!-- Título + Botón Subir -->
         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <div class="seccion-titulo"><span class="barra"></span> Libros y Textos</div>
@@ -495,10 +490,8 @@
                 📤 Subir nuevo PDF
             </button>
         </div>
-
         <!-- GRILLA DE LIBROS -->
         <div class="biblioteca-grid" id="gridLibros">
-
             <!-- === LIBRO 1 === -->
             <div class="libro-card" data-id="1">
                 <div class="libro-portada">🏺</div>
@@ -508,13 +501,12 @@
                     <p class="libro-autor">E. H. Gombrich</p>
                     <p class="libro-desc">Un recorrido ameno por la historia de la humanidad, pensado para entender el pasado de forma simple y clara.</p>
                     <div class="libro-botones">
-                        <a href="#" class="btn-descargar" download>📥 Descargar</a>
-                        <button class="btn-copiar" data-link="https://tu-sitio.com/libro/gombrich">🔗 Copiar Enlace</button>
+                        <a href="archivos-pdf/breve-historia.pdf" class="btn-descargar" download>📥 Descargar</a>
+                        <button class="btn-copiar" data-link="archivos-pdf/breve-historia.pdf">🔗 Copiar Enlace</button>
                     </div>
                     <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
                 </div>
             </div>
-
             <!-- === LIBRO 2 === -->
             <div class="libro-card" data-id="2">
                 <div class="libro-portada">⚔️</div>
@@ -524,13 +516,12 @@
                     <p class="libro-autor">Herodoto</p>
                     <p class="libro-desc">Los orígenes de la cultura occidental: guerras, mitos y la vida de las primeras ciudades-estado.</p>
                     <div class="libro-botones">
-                        <a href="#" class="btn-descargar" download>📥 Descargar</a>
-                        <button class="btn-copiar" data-link="https://tu-sitio.com/libro/herodoto">🔗 Copiar Enlace</button>
+                        <a href="archivos-pdf/historia-grecia.pdf" class="btn-descargar" download>📥 Descargar</a>
+                        <button class="btn-copiar" data-link="archivos-pdf/historia-grecia.pdf">🔗 Copiar Enlace</button>
                     </div>
                     <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
                 </div>
             </div>
-
             <!-- === LIBRO 3 === -->
             <div class="libro-card" data-id="3">
                 <div class="libro-portada">🏛️</div>
@@ -540,13 +531,12 @@
                     <p class="libro-autor">Tito Livio</p>
                     <p class="libro-desc">Del nacimiento de Roma al apogeo del imperio más influyente de la Antigüedad.</p>
                     <div class="libro-botones">
-                        <a href="#" class="btn-descargar" download>📥 Descargar</a>
-                        <button class="btn-copiar" data-link="https://tu-sitio.com/libro/tito-livio">🔗 Copiar Enlace</button>
+                        <a href="archivos-pdf/historia-roma.pdf" class="btn-descargar" download>📥 Descargar</a>
+                        <button class="btn-copiar" data-link="archivos-pdf/historia-roma.pdf">🔗 Copiar Enlace</button>
                     </div>
                     <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
                 </div>
             </div>
-
             <!-- === LIBRO 4 === -->
             <div class="libro-card" data-id="4">
                 <div class="libro-portada">🏰</div>
@@ -556,13 +546,12 @@
                     <p class="libro-autor">Johan Huizinga</p>
                     <p class="libro-desc">La vida, el arte y el pensamiento en los últimos siglos del mundo medieval europeo.</p>
                     <div class="libro-botones">
-                        <a href="#" class="btn-descargar" download>📥 Descargar</a>
-                        <button class="btn-copiar" data-link="https://tu-sitio.com/libro/huizinga">🔗 Copiar Enlace</button>
+                        <a href="archivos-pdf/edad-media.pdf" class="btn-descargar" download>📥 Descargar</a>
+                        <button class="btn-copiar" data-link="archivos-pdf/edad-media.pdf">🔗 Copiar Enlace</button>
                     </div>
                     <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
                 </div>
             </div>
-
             <!-- === LIBRO 5 === -->
             <div class="libro-card" data-id="5">
                 <div class="libro-portada">🌍</div>
@@ -572,13 +561,12 @@
                     <p class="libro-autor">Eduardo Galeano</p>
                     <p class="libro-desc">Una mirada crítica sobre la historia económica y política del continente americano.</p>
                     <div class="libro-botones">
-                        <a href="#" class="btn-descargar" download>📥 Descargar</a>
-                        <button class="btn-copiar" data-link="https://tu-sitio.com/libro/galeano">🔗 Copiar Enlace</button>
+                        <a href="archivos-pdf/venas-abiertas.pdf" class="btn-descargar" download>📥 Descargar</a>
+                        <button class="btn-copiar" data-link="archivos-pdf/venas-abiertas.pdf">🔗 Copiar Enlace</button>
                     </div>
                     <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
                 </div>
             </div>
-
             <!-- === LIBRO 6 === -->
             <div class="libro-card" data-id="6">
                 <div class="libro-portada">⚙️</div>
@@ -588,29 +576,25 @@
                     <p class="libro-autor">Eric Hobsbawm</p>
                     <p class="libro-desc">Guerras mundiales, revoluciones y los grandes cambios que dieron forma al mundo actual.</p>
                     <div class="libro-botones">
-                        <a href="#" class="btn-descargar" download>📥 Descargar</a>
-                        <button class="btn-copiar" data-link="https://tu-sitio.com/libro/hobsbawm">🔗 Copiar Enlace</button>
+                        <a href="archivos-pdf/siglo-xx.pdf" class="btn-descargar" download>📥 Descargar</a>
+                        <button class="btn-copiar" data-link="archivos-pdf/siglo-xx.pdf">🔗 Copiar Enlace</button>
                     </div>
                     <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
                 </div>
             </div>
-
         </div>
-
     </main>
-
     <!-- Footer -->
     <div class="footer">
         &copy; 2026 El Punto de Encuentro — Biblioteca de Historia Mundial. Creado por Michael Novoa.
     </div>
 </div>
-
 <!-- JAVASCRIPT para los botones -->
 <script>
     // Copiar enlace
     document.querySelectorAll('.btn-copiar').forEach(btn => {
         btn.addEventListener('click', function() {
-            const enlace = this.getAttribute('data-link');
+            const enlace = window.location.origin + '/' + this.getAttribute('data-link');
             navigator.clipboard.writeText(enlace).then(() => {
                 const textoOriginal = this.innerText;
                 this.innerText = '✅ ¡Copiado!';
@@ -622,7 +606,6 @@
             });
         });
     });
-
     // Borrar tarjeta
     document.querySelectorAll('.btn-borrar').forEach(btn => {
         btn.addEventListener('click', function() {
@@ -635,12 +618,10 @@
             }
         });
     });
-
-    // Subir PDF (próxima etapa: conectar con backend)
+    // Subir PDF
     document.getElementById('btnSubir').addEventListener('click', function() {
         alert('📤 Funcionalidad de subida en preparación.\n\nEn la siguiente etapa se conectará para guardar el PDF y aparecerá automáticamente en la biblioteca.');
     });
 </script>
-
 </body>
 </html>
