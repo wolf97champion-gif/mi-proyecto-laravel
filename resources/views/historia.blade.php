@@ -1,5 +1,5 @@
-{{-- Extiende la plantilla principal --}}
-@extends('layouts.app')
+{{-- Extiende la plantilla que ya tenés (welcome.blade.php) --}}
+@extends('welcome')
 
 {{-- Título de la página --}}
 @section('title', 'Archivo Histórico')
