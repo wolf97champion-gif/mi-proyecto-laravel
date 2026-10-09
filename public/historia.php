@@ -502,8 +502,8 @@
         <p class="libro-autor">Marcela Ternavasio</p>
         <p class="libro-desc">Análisis y reflexión sobre la historia argentina contemporánea.</p>
         <div class="libro-botones">
-            <a href="archivos-pdf/historia-argentina.pdf" download>📥 Descargar</a>
-            <button class="btn-copiar" data-link="archivos-pdf/historia-argentina.pdf">🔗 Copiar Enlace</button>
+            <<a href="/archivos-pdf/historia-argentina.pdf" download>📥 Descargar</a>
+            <button class="btn-copiar" data-link="/archivos-pdf/historia-argentina.pdf">🔗 Copiar Enlace</button>
         </div>
     </div>
 </div>
