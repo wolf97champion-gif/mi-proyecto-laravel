@@ -534,8 +534,9 @@
             <a href="archivos-pdf/historia-argentina.pdf" class="btn-descargar" download>📥 Descargar</a>
             <button class="btn-copiar" data-ruta="archivos-pdf/historia-argentina.pdf">🔗 Copiar Enlace</button>
         </div>
-    </div>
-</div>
+            <button class="btn-borrar" style="margin-top: 8px; width: 100%;">🗑️ Borrar</button>
+        </div>
+        </div>
             <!-- === LIBRO 4 === -->
             <div class="libro-card" data-id="4">
                 <div class="libro-portada">🏰</div>
