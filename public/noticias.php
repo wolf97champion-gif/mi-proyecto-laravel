@@ -326,12 +326,18 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
             <span class="icon">📰</span> Noticias
         </a>
 
-        <div class="sidebar-divider"></div>
+        
+       <div class="sidebar-divider"></div>
 
-        <a href="historia.php" class="sidebar-link">
-        <span class="icon">📜</span> Sección de Historia
-        </a>
-        </div>
+       <div class="sidebar-section-title">
+             ARCHIVO HISTÓRICO
+      </div>
+
+      <a href="historia.php" class="sidebar-link">
+      <span class="icon">📜</span> Sección de Historia
+      </a>
+
+</div>
 
         <div class="sidebar-footer">
             <div class="menu-label">Redes Oficiales</div>
