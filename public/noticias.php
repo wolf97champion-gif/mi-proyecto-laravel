@@ -187,6 +187,15 @@ $ultimaAct = is_file($cacheFile) ? date('H:i', filemtime($cacheFile)) : date('H:
             border-radius: 6px; 
             text-transform: uppercase; 
         }
+        
+        .sidebar-section-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #94a3b8;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 18px 12px 10px;
+        }
         .sidebar-footer { margin-top: auto; padding-top: 15px; }
         .sidebar-socials { display: flex; gap: 10px; margin-top: 10px; }
         .social-pill { 
