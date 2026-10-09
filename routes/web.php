@@ -21,3 +21,8 @@ Route::get('/posiciones', function () {
 Route::get('/plantel', function () {
     return view('plantel');
 });
+
+// ✅ Ruta de Historia — igual que todas las demás
+Route::get('/historia', function () {
+    return view('historia');
+});
