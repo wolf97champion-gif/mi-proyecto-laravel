@@ -136,6 +136,17 @@ function tarjetaJugador(array $j): void { ?>
         .social-pill.youtube:hover { background: #cc0000; border-color: #cc0000; color: #fff; }
         .social-pill.tiktok:hover { background: #ff0050; border-color: #ff0050; color: #fff; }
 
+        
+        .sidebar-section-title {
+           font-size: 12px;
+           font-weight: 600;
+           color: #94a3b8;
+           letter-spacing: 0.8px;
+           text-transform: uppercase;
+           padding: 18px 12px 10px;
+        }
+
+
         /* --- CAJA MERCADO PAGO EN EL NAVBAR --- */
         .mp-box { margin-top: 14px; background: linear-gradient(135deg, rgba(0,158,227,0.18), rgba(245,158,11,0.10)); border: 1px solid rgba(0,158,227,0.35); border-radius: 12px; padding: 12px; }
         .mp-box .mp-title { font-size: 0.72rem; font-weight: 800; color: #35c2ff; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
@@ -210,12 +221,19 @@ function tarjetaJugador(array $j): void { ?>
             <a href="plantel.php" class="sidebar-link active"><span class="icon">👥</span> Plantel Actual</a>
             <a href="noticias.php" class="sidebar-link"><span class="icon">📰</span> Noticias</a>
 
-            <div class="sidebar-divider"></div>
+            
+       <div class="sidebar-divider"></div>
 
-            <a href="historia.php" class="sidebar-link">
-            <span class="icon">📜</span> Sección de Historia
-            </a>
-        </div>
+       <div class="sidebar-section-title">
+            ARCHIVO HISTÓRICO
+       </div>
+
+       <a href="historia.php" class="sidebar-link">
+       <span class="icon">📜</span> Sección de Historia
+       </a>
+
+</div>
+
 
         <div class="sidebar-footer">
             <div class="menu-label" style="padding-left:0; margin-bottom: 2px;">Redes Oficiales</div>
